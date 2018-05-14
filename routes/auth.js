@@ -178,7 +178,7 @@ authRoutes.get('/facebook',
 authRoutes.get('/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/registro' }),
   function(req, res) {
-    console.log(req)
+    console.log(req.session)
     res.redirect('/');
   });
 
