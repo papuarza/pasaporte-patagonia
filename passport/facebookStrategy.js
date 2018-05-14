@@ -12,7 +12,10 @@ passport.use(new FacebookStrategy({
 },
 function(accessToken, refreshToken, profile, cb) {
   console.log(profile)
-  User.create({ email: profile.email, name: profile.name.givenName, lastName: profile.name.familyName })
+  let email = profile.email || '';
+  let name = profile.name.givenName || '';
+  let lastName = profile.name.familyName || '';
+  User.create({ email, name, lastName })
   .then(user => {
     return cb(null, user);
   })
