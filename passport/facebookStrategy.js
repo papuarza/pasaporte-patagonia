@@ -11,6 +11,6 @@ passport.use(new FacebookStrategy({
 },
 function(accessToken, refreshToken, profile, cb) {
   console.log(profile)
-  return cb(err, profile);
+  return cb(null, profile);
 }
 ));
