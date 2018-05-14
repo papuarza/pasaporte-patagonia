@@ -33,7 +33,7 @@ router.post('/create/:id', (req, res, next) => {
           $push: { vouchers: voucher._id},
         }, {new: true} )
         .then(modifiedInfo => {
-          sendTheEmail(user, 'voucher')
+          emailing.sendTheEmail(user, 'voucher')
           .then(info => {
             res.status(200).json({subMessage: "Felicidades!", message: "El voucher ha sido creado correctamente!", instructions: 'En tu email recibirás un mensaje con el voucher y las instrucciones. También puedes revisar la sección "Canjes" del la web para ver tus vouchers.', redirection: 'VER CANJES', ref:'/canjes'})
           })

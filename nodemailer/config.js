@@ -3,7 +3,6 @@ const template = require('../templates/emailing.js');
 
 module.exports = {
   sendTheEmail: (user, type) => {
-    console.log(user, type)
     let transporter = nodemailer.createTransport({
       service: 'Gmail',
       auth: {
@@ -24,7 +23,7 @@ module.exports = {
         break;
       case 'voucher':
         subject = 'Aquí tienes tu Voucher Patagonia! ✈️🍺';
-        message = template.emailingTemplate(user, `${process.env.URL}/auth/recuperar/${user.activationCode}`, 'Voucher', 'Si te olvidaste tu contraseña, no te preocupes, tenemos una solución!', 'Hacé click en el botón y crea una nueva!');
+        message = template.emailingTemplate(user, `${process.env.URL}/canjes`, 'Ver mis Vouchers', 'Este texto todavía hay que ver que poner!', 'Si si si, hay que pensar que poner acá. Alguna explicación o algo!!');
         break;
     }
     return transporter.sendMail({
