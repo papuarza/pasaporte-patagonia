@@ -50,13 +50,16 @@ document.addEventListener('DOMContentLoaded', () => {
   if(mayor) {
     mayor.addEventListener('click', () => {
       let generarBtn = document.getElementById("nuevo-usuario-btn");
+      let generarBtnFb = document.getElementById("nuevo-usuario-btn-fb");
       let ageInput = document.getElementById('mayor-input');
       if(generarBtn.classList.contains('disabled')) {
         generarBtn.classList.remove('disabled');
+        generarBtnFb.classList.remove('disabled');
         ageInput.checked = true;
         mayor.style.fontFamily = "AmsiPro-Bold";
       } else {
         generarBtn.classList.add('disabled');
+        generarBtnFb.classList.add('disabled');
         ageInput.checked = false;
         mayor.style.fontFamily = "AmsiPro-Light";
       }

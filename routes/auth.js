@@ -172,4 +172,14 @@ authRoutes.post("/panel/login", (req, res, next) => {
   })
 });
 
+authRoutes.get('/facebook',
+  passport.authenticate('facebook'));
+
+authRoutes.get('/facebook/callback',
+  passport.authenticate('facebook', { failureRedirect: '/login' }),
+  function(req, res) {
+    console.log(req.session)
+    res.redirect('/');
+  });
+
 module.exports = authRoutes;

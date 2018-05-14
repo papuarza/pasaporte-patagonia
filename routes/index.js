@@ -38,7 +38,7 @@ ensureAuthenticated = (req, res, next) => {
     })
     .catch(error => next(error))
   } else {
-    res.redirect('/login')
+    res.redirect('/registro')
   }
 }
 
