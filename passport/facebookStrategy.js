@@ -10,12 +10,8 @@ passport.use(new FacebookStrategy({
   callbackURL: `${process.env.URL}/auth/facebook/callback`,
   profileFields: ['id', 'displayName', 'email']
 },
-function(accessToken, refreshToken, profile, cb, papu) {
-  console.log(accessToken)
-  console.log(refreshToken)
+function(accessToken, refreshToken, profile, cb) {
   console.log(profile)
-  console.log(cb)
-  console.log(papu)
   let email = profile.email || '';
   let name = profile.name.givenName || '';
   let lastName = profile.name.familyName || '';
