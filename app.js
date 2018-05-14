@@ -16,7 +16,7 @@ const flash      = require("connect-flash");
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/pasaporte-patagonia', {useMongoClient: true})
+  .connect(process.env.MONGODB_URI, {useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
@@ -80,6 +80,11 @@ app.use('/', index);
 
 const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
-      
 
+const codesRoutes = require('./routes/code');
+app.use('/code', codesRoutes);
+      
+const voucherRoutes = require('./routes/voucher');
+app.use('/voucher', voucherRoutes);
+      
 module.exports = app;

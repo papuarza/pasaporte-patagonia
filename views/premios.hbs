@@ -1,0 +1,41 @@
+<div class="home-wrapper-info">
+  <div class="consumos-message-wrapper">
+    <span>
+      <img src="/images/passport.png" alt="">
+      {{user.kmsAvailable}}kms
+    </span>
+    <p>DISPONIBLES</p>
+  </div>
+  <div class="step-counter-home">
+    <span> CANJES DISPONIBLES</span>
+  </div>
+  <p class="cargar-codigo-paragraph premios mobile">PARA CANJEAR UN PREMIO SOLO TIENES QUE HACER CLICK EN EL BOTÓN <strong>CANJEAR</strong> Y AUTOMÁTICAMENTE SE GENERARÁ UN VOUCHER QUE LO RECIBIRÁS EN TU EMAIL.</p>
+  <div class="canjes-wrapper premios mobile">
+    {{#each prizes}}
+    <div class="canje-item-wrapper">
+      <div class="canje-item">
+        {{#if available}}<div class="image-item-container active" style="background-image: url('{{this.image}}')"></div>{{/if}}
+        {{#unless available}}
+        <div class="image-item-container" style="background-image: url('{{this.image}}')"></div>
+        <p>
+          Faltan
+          <span> {{this.kmsLeft}}kms</span>
+        </p>
+        {{/unless}}
+      </div>
+      <p>{{this.name}}</p>
+      {{#if available}}
+        <button class="btn voucher voucher-button" id="voucher-generate" data-value="{{this._id}}">CANJEAR</button>
+      {{/if}}
+    </div>
+    {{/each}}
+  </div>
+  <div class="api-response" id="response-message-voucher">
+    <div class="response-wrapper">
+      <p id="main-message"></p>
+      <p id="secondary-message"></p>
+      <p id="instructions-message"></p>
+      <a href="" class="btn" id="redirection-button"></a>
+    </div>
+  </div>
+</div>

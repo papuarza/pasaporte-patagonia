@@ -3,13 +3,13 @@ const LocalStrategy = require('passport-local').Strategy;
 const User          = require('../models/User');
 const bcrypt        = require('bcrypt');
 
-passport.use(new LocalStrategy((username, password, next) => {
-  User.findOne({ username }, (err, foundUser) => {
-    if (err) {
-      next(err);
-      return;
-    }
-
+passport.use(new LocalStrategy({
+  usernameField: 'dni',
+  passwordField: 'password',
+  passReqToCallback: true},
+  (req, dni, password, next) => {
+  User.findOne({ dni })
+  .then(foundUser => {
     if (!foundUser) {
       next(null, false, { message: 'Incorrect username' });
       return;
@@ -19,7 +19,9 @@ passport.use(new LocalStrategy((username, password, next) => {
       next(null, false, { message: 'Incorrect password' });
       return;
     }
-
     next(null, foundUser);
-  });
+  })
+  .catch(error => {
+    next(error)
+  })
 }));

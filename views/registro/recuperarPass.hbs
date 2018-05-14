@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <title>Cerveza Patagonia</title>
+</head>
+<body>
+  <div class="home-wrapper-steps">
+    <div class="landscape-wrapper">
+
+    </div>
+    <div class="form-home-wrapper-steps">
+      <img src="/images/logo-color.png" alt="" class="logo-home">
+      <h2>Recuperar Contraseña</h2>
+      <img src="/images/lupulo.png" alt="" class="lupus-icon login">
+      <div class="home-text-wrapper" style="margin-bottom: 30px">
+        <h3>Ingresa tu dirección de correo y te enviaremos un link para que puedas regenerar tu contraseña.</h3>
+      </div>
+      <form name="step-three-form">
+        <fieldset>
+          <input type="text" name="email" autocomplete="off" required id="recuperar-email">
+          <label for="">Email</label>
+        </fieldset>
+        <p id="form-error-message"></p>
+        <button id="recuperar-button" class="btn data-confirm login" style="margin-bottom: 50px;">ENVIAR</button>
+      </form>
+
+      <div class="bases-footer">
+        <a href="/bases-condiciones">BASES Y CONDICIONES</a>
+        <span>BEBER CON MODERACIÓN. PROHIBIDA SU VENTA A MENORES DE 18 AÑOS.</span>
+      </div>
+    </div>
+  </div>
+  <script src='/javascripts/script.js'></script>
+</body>
+</html>

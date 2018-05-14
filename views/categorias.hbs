@@ -1,0 +1,15 @@
+<div class="categories-wrapper">
+  <div class="icon-category-wrapper">
+    <img src="{{user.category.image}}" alt="">
+    <h3 style="margin-top: 20px">{{user.category.name}}</h3>
+    <div class="category-slider">
+      {{#each user.categoriesLevel}}
+      {{#if this}}
+      <div class="active"><p></p></div>
+      {{else}}
+      <div><p></p></div>
+      {{/if}}
+      {{/each}}
+    </div>
+  </div>
+</div>

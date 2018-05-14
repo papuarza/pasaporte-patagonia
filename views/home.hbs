@@ -1,0 +1,41 @@
+<div class="home-wrapper-info">
+  <div class="info-wrapper">
+    <p class="info-container">
+      KMS DISPONIBLES
+      <span class="kms-available">{{user.kmsAvailable}}</span>
+    </p>
+    <p class="info-container">
+      KMS ACUMULADOS
+      <span>{{user.kmsTotal}}</span>
+    </p>
+    <p class="info-container">
+      PREMIOS CANJEADOS
+      <span>{{user.vouchersQ}}</span>
+    </p>
+    <p class="info-container">
+      PACKS CANJEADOS
+      <span>{{user.codesQ}}</span>
+    </p>
+  </div>
+  <div class="step-counter-home">
+    <span> CANJES DISPONIBLES</span>
+  </div>
+
+  <div class="canjes-wrapper">
+    {{#each prizes}}
+    <div class="canje-item-wrapper">
+      <div class="canje-item">
+        {{#if available}}<div class="image-item-container active" style="background-image: url('{{this.image}}')"></div>{{/if}}
+        {{#unless available}}
+        <div class="image-item-container" style="background-image: url('{{this.image}}')"></div>
+        <p>
+          Faltan
+          <span> {{this.kmsLeft}}kms</span>
+        </p>
+        {{/unless}}
+      </div>
+      <p>{{this.name}}</p>
+    </div>
+    {{/each}}
+  </div>
+</div>

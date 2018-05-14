@@ -1,0 +1,24 @@
+<div class="home-wrapper-info">
+  <div class="consumos-message-wrapper">
+    <span style="min-width: 30%;">
+      <img src="/images/passport.png" alt="">
+      {{vouchers.length}}
+    </span>
+    <p>CANJES REALIZADOS</p>
+  </div>
+   <div class="step-counter-old-codes">
+       <span> CÓDIGOS CANJEADOS</span>
+    </div>
+    <p class="cargar-codigo-paragraph" style="margin-bottom: 0px;">AQUÍ PUEDES REVISAR TODOS LOS VOUCHERS QUE HAS CANJEADO Y SU ESTADO</p>
+    <div class="code-items">
+      {{#each vouchers}}
+      <div class="code-item-wrapper">
+        <p class="code-id">Código: <span>{{this.voucher}}</span></p> 
+        <p class="code-value">Premio: <span>{{this.prizeObj.name}}</span></p> 
+        <p class="code-value">Kms. Utilizados: <span>{{this.kmsUsed}}kms.</span></p> 
+        <p class="code-value">Status: <span>{{this.status}}</span></p> 
+        <p class="code-date">Fecha de Carga: <span>{{this.date}}</span></p> 
+      </div>
+      {{/each}}
+    </div>
+</div>

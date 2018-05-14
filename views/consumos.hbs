@@ -1,0 +1,22 @@
+<div class="home-wrapper-info">
+  <div class="consumos-message-wrapper">
+    <span>
+      <img src="/images/passport.png" alt="">
+      {{user.kmsTotal}}kms
+    </span>
+    <p>ACUMULADOS</p>
+  </div>
+   <div class="step-counter-old-codes">
+       <span> CÓDIGOS CANJEADOS</span>
+    </div>
+    <p class="cargar-codigo-paragraph" style="margin-bottom: 0px;">AQUÍ PUEDES REVISAR TODOS LOS CÓDIGOS QUE HAS CANJEADO</p>
+    <div class="code-items">
+      {{#each codes}}
+      <div class="code-item-wrapper">
+        <p class="code-id">Código: <span>{{this.code_id}}</span></p> 
+        <p class="code-value">Valor: <span>{{this.kmsValue}}kms.</span></p> 
+        <p class="code-date">Fecha de Carga: <span>{{this.date}}</span></p> 
+      </div>
+      {{/each}}
+    </div>
+</div>

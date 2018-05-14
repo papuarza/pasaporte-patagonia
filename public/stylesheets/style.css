@@ -1,0 +1,1206 @@
+@charset "UTF-8";
+/*
+*/
+@font-face {
+  font-family: 'AmsiPro-Black';
+  src: url("../fonts/AmsiPro-Black.otf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'AmsiPro-Bold';
+  src: url("../fonts/AmsiPro-Bold.otf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'AmsiPro-SemiBold';
+  src: url("../fonts/AmsiPro-Bold.otf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'AmsiPro-Regular';
+  src: url("../fonts/AmsiPro-Regular.otf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'AmsiPro-Light';
+  src: url("../fonts/AmsiPro-XLight.otf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'AmsiNarw-SemiBold';
+  src: url("../fonts/AmsiProNarw-SemiBold.otf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'AmsiNarw-Bold';
+  src: url("../fonts/AmsiProNarw-Bold.otf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'AmsiNarw-Regular';
+  src: url("../fonts/AmsiProNarw-Regular.otf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'AmsiNarw-Light';
+  src: url("../fonts/amsipronarw-light-webfont.eot");
+  src: url("../fonts/amsipronarw-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/amsipronarw-light-webfont.woff2") format("woff2"), url("../fonts/amsipronarw-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+body {
+  font: 16px "AmsiPro-Bold", sans-serif; }
+
+* {
+  margin: 0;
+  box-sizing: border-box; }
+
+/*******************************/
+/*                             */
+/*         HOME-LANDING        */
+/*                             */
+/*******************************/
+.home-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative; }
+
+.landscape-wrapper {
+  width: 50%;
+  background-image: url("../images/paisaje.jpg");
+  background-position: center;
+  background-size: cover; }
+
+.form-home-wrapper {
+  width: 50%;
+  height: 100vh;
+  background-image: url("../images/Fondo_desktop.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 7% 20px 7%;
+  color: #fff; }
+
+.form-home-wrapper .logo-home {
+  width: 220px;
+  margin: 20px 0; }
+
+.form-home-wrapper h1 {
+  font-size: 1.5em;
+  margin-bottom: 20px; }
+
+.form-home-wrapper .lupus-icon {
+  width: 25px;
+  margin-bottom: 20px; }
+
+.form-home-wrapper .home-text-wrapper {
+  padding: 0 15%; }
+
+.home-text-wrapper h3 {
+  font: 1em "AmsiPro-Light", sans-serif;
+  text-align: center; }
+
+.form-home-wrapper .validator-wrapper {
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  width: 85%;
+  margin: 25px auto 20px;
+  display: flex;
+  justify-content: center;
+  padding: 30px 0 0 0; }
+
+.form-home-wrapper .validator-wrapper input {
+  display: none; }
+
+.form-home-wrapper .validator-wrapper [type=checkbox]:checked + label, .form-home-wrapper .validator-wrapper [type=checkbox]:not(:checked) + label {
+  font: 1em "AmsiPro-Light", sans-serif;
+  cursor: pointer;
+  position: relative;
+  user-select: none; }
+
+.form-home-wrapper .validator-wrapper [type=checkbox]:checked + label:before, .form-home-wrapper .validator-wrapper [type=checkbox]:not(:checked) + label:before {
+  content: '';
+  position: absolute;
+  left: -25%;
+  top: 0;
+  width: 1.5em;
+  height: 1.5em;
+  border: 1px solid white;
+  background: transparent; }
+
+.form-home-wrapper .validator-wrapper [type=checkbox]:checked + label:after {
+  content: '';
+  position: absolute;
+  top: .3em;
+  left: -22%;
+  width: 14px;
+  height: 7px;
+  bottom: 2px;
+  border: 3px solid white;
+  border-top: none;
+  border-right: none;
+  background: transparent;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  color: white; }
+
+.btn {
+  height: 65px;
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  align-items: center;
+  margin: 10px auto;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font: 0.8em "AmsiPro-Bold", sans-serif;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 5px;
+  justify-content: center; }
+
+.btn.disabled {
+  opacity: 0.2;
+  pointer-events: none; }
+
+.bases-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.bases-footer a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.7em;
+  margin-bottom: 15px; }
+
+.bases-footer a:hover {
+  text-decoration: underline; }
+
+.bases-footer span {
+  font: 0.6em "AmsiPro-Regular", sans-serif; }
+
+.generate-wrapper {
+  width: 100%; }
+
+/*******************************/
+/*                             */
+/*         HOME-FORM           */
+/*                             */
+/*******************************/
+.home-wrapper-steps {
+  width: 100%;
+  display: flex;
+  min-height: 100vh; }
+
+.form-home-wrapper-steps {
+  width: 50%;
+  background-image: url("../images/Fondo_desktop.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 7% 20px 7%;
+  color: #fff; }
+
+.form-home-wrapper-steps .logo-home {
+  width: 220px;
+  margin: 20px 0; }
+
+.step-counter {
+  font: 1em "AmsiPro-Light", sans-serif;
+  color: white;
+  line-height: 1.2em;
+  margin: 0 auto 20px auto;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px; }
+
+.form-home-wrapper-steps h2 {
+  font: 1.7em "AmsiPro-Bold", sans-serif;
+  text-align: center;
+  padding: 25px 0; }
+
+.form-home-wrapper-steps form {
+  width: 100%; }
+
+form fieldset {
+  margin: 5px auto 10px;
+  width: 100%;
+  max-width: 340px;
+  border: 0; }
+
+.form-home-wrapper-steps form fieldset label {
+  padding: 0;
+  float: right;
+  font-size: .8em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "AmsiNarw-SemiBold", sans-serif; }
+
+.step-counter:before, .step-counter::after {
+  content: "";
+  height: 1px;
+  width: 20%;
+  margin: 5px 10px;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.3); }
+
+.false-input:focus, input:focus, select:focus {
+  border: 1px solid white;
+  background: transparent;
+  -webkit-transition: border .3s ease-in-out;
+  -o-transition: border .3s ease-in-out;
+  transition: border .3s ease-in-out; }
+
+.false-input {
+  height: 60px;
+  cursor: pointer;
+  position: relative; }
+
+.false-input:after {
+  right: 15px;
+  top: 24px;
+  width: 6px;
+  height: 6px;
+  margin: 0;
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
+  content: '';
+  display: block;
+  margin-top: -4px;
+  pointer-events: none;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform-origin: 66% 66%;
+  transform: rotate(45deg);
+  transition: all 0.15s ease-in-out; }
+
+a:focus, button:focus, input:focus {
+  outline: 0; }
+
+.false-input, input, select {
+  outline: 0;
+  color: white;
+  padding: 20px;
+  display: block;
+  width: 100%;
+  margin: 0 auto 5px;
+  letter-spacing: 1px;
+  background: transparent;
+  font: 1em "AmsiNarw-Regular", sans-serif;
+  border-radius: 0;
+  border: 1px solid rgba(255, 255, 255, 0.3); }
+
+.false-input:hover {
+  border-color: #dbdbdb; }
+
+.false-input .elements-list {
+  left: 0px !important;
+  right: 0px !important;
+  background: #00251D;
+  max-height: 185px;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  overflow-y: scroll;
+  transform-origin: 50% 0;
+  position: absolute;
+  top: 100%;
+  z-index: 9;
+  display: none;
+  padding: 0;
+  opacity: 0;
+  cursor: pointer; }
+
+.false-input .elements-list.show-input-options {
+  display: block;
+  animation: showTheInput 1s ease-out 0s 1 forwards; }
+
+@keyframes showTheInput {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.false-input .elements-list li {
+  line-height: 45px;
+  padding-left: 25px;
+  cursor: pointer;
+  font-weight: 400;
+  list-style: none;
+  min-height: 40px;
+  outline: none;
+  padding-right: 29px;
+  text-align: left;
+  font: 1em "AmsiNarw-Regular", sans-serif;
+  display: flex;
+  align-items: center; }
+
+.false-input .elements-list li:hover {
+  background-color: rgba(0, 0, 0, 0.3); }
+
+.btn.data-confirm {
+  margin: 0px auto 40px;
+  position: relative; }
+
+.btn:hover {
+  color: white;
+  background: rgba(44, 91, 83, 0.5); }
+
+#form-error-message {
+  color: #ef5350;
+  font: 1em "AmsiNarw-Regular", sans-serif;
+  text-align: center;
+  line-height: 25px;
+  min-height: 25px;
+  margin-bottom: 20px; }
+
+.day-birth {
+  width: 28%;
+  display: inline-flex; }
+
+.month-birth, .year-birth {
+  width: 33%;
+  display: inline-flex; }
+
+.message-step-2 {
+  width: 80%;
+  margin: 10px 10% 30px 10%;
+  font: 1em "AmsiPro-Light", sans-serif;
+  text-align: center; }
+
+.usuario-pendiente-img {
+  width: 300px;
+  margin-bottom: 20px; }
+
+.step-3-button {
+  color: #fff;
+  margin-bottom: 50px; }
+
+.cervezas-img {
+  width: 150px;
+  margin-bottom: 70px; }
+
+.forgot-password {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #fff;
+  font-size: 11px; }
+
+.btn.data-confirm.login {
+  margin-bottom: 8px; }
+
+.lupus-icon.login {
+  width: 25px;
+  margin-bottom: 40px; }
+
+/*******************************/
+/*                             */
+/*         LAYOUT              */
+/*                             */
+/*******************************/
+.body-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("../images/Fondo_desktop.jpg");
+  background-position: center;
+  background-size: cover;
+  justify-content: space-between; }
+
+header {
+  background: rgba(0, 0, 0, 0.12);
+  margin-bottom: 20px;
+  display: flex;
+  padding: 0 10%;
+  height: 70px;
+  align-items: center;
+  justify-content: space-between; }
+
+header .logo-wrapper, header .profile-wrapper {
+  display: flex;
+  align-items: center; }
+
+header .profile-wrapper img:hover {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+  border-radius: 360px; }
+
+header .logo-wrapper img {
+  width: 100px; }
+
+header .menu-wrapper {
+  padding: 0 5%;
+  margin: 0 50px 0 20px; }
+
+header .menu-wrapper ul {
+  display: flex;
+  padding: 0;
+  margin: 0; }
+
+header .menu-wrapper ul li {
+  list-style-type: none; }
+
+header .menu-wrapper ul li a {
+  color: #fff;
+  letter-spacing: 1px;
+  font-family: "AmsiPro-Light", sans-serif;
+  font-size: 0.8em;
+  text-decoration: none;
+  margin: 0 17px;
+  cursor: pointer;
+  padding-bottom: 4px; }
+
+header .menu-wrapper ul li a.active {
+  border-bottom: 1px solid #fff; }
+
+.bases-footer {
+  padding-bottom: 20px; }
+
+.bases-footer span {
+  color: #fff; }
+
+.bases-footer img {
+  width: 25px;
+  margin-bottom: 20px; }
+
+header .menu-mobile {
+  display: none; }
+
+.menu-list-wrapper  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15% 3%;
+  height: 100vh;
+  width: 100%; }
+
+header .menu-items-wrapper .menu-list-wrapper li {
+  list-style-type: none; }
+
+header .menu-items-wrapper .menu-list-wrapper li a {
+  color: #00251D;
+  text-decoration: none;
+  font-family: "AmsiNarw-Regular", sans-serif;
+  font-size: 1.3em; }
+
+header .menu-mobile-full {
+  display: none; }
+
+/*******************************/
+/*                             */
+/*         HOME                */
+/*                             */
+/*******************************/
+.home-wrapper-info {
+  padding: 10px 17%; }
+
+.info-wrapper {
+  display: flex;
+  flex-wrap: wrap; }
+
+.info-container {
+  width: 50%;
+  background-image: url("../images/recuadro.png");
+  background-size: cover;
+  background-position: cover;
+  display: flex;
+  padding: 0 1% 0 7%;
+  height: 80px;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 1.2em;
+  font-family: "AmsiPro-Regular", sans-serif;
+  margin-bottom: 20px; }
+
+.info-container span {
+  background-image: url("../images/recuadro-span.png");
+  background-size: cover;
+  background-position: cover;
+  width: 25%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 1.6em "AmsiPro-Bold", sans-serif; }
+
+.info-container span.kms-available {
+  color: #DBAD44; }
+
+.step-counter-home {
+  width: 100%;
+  display: flex;
+  line-height: 24px;
+  align-items: center;
+  margin: 30px auto; }
+
+.step-counter-home span {
+  font: 1em "AmsiPro-Light", sans-serif;
+  color: white;
+  line-height: 1.2em;
+  width: 30%;
+  padding: 0 5%;
+  text-align: center; }
+
+.step-counter-home:before, .step-counter-home::after {
+  content: "";
+  height: 1px;
+  width: 35%;
+  display: inline-block;
+  margin: px 0;
+  background-color: rgba(255, 255, 255, 0.3); }
+
+.canjes-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 0 15%; }
+
+.canje-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.canje-item-wrapper p {
+  font: 0.7em "AmsiPro-Regular", sans-serif;
+  color: #fff;
+  margin: 8px 0;
+  letter-spacing: 1px;
+  text-transform: uppercase; }
+
+.canje-item {
+  width: 10em;
+  height: 10em;
+  background-color: rgba(0, 0, 0, 0.33);
+  border-radius: 360px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.image-item-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 360px;
+  background-size: cover;
+  background-position: cover;
+  opacity: 0.2; }
+
+.image-item-container.active {
+  opacity: 1; }
+
+.canje-item p {
+  font: 1.1em "AmsiPro-Bold", sans-serif;
+  color: #fff;
+  position: relative;
+  z-index: 10;
+  line-height: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+
+/*******************************/
+/*                             */
+/*         CARGAR CÓDIGO       */
+/*                             */
+/*******************************/
+.step-counter-code {
+  width: 100%;
+  display: flex;
+  line-height: 24px;
+  align-items: center;
+  margin: 30px auto; }
+
+.step-counter-code span {
+  font: 0.9em "AmsiPro-Light", sans-serif;
+  letter-spacing: 1px;
+  color: white;
+  line-height: 1.2em;
+  width: 20%;
+  padding: 0 2%;
+  text-align: center; }
+
+.step-counter-code:before, .step-counter-code::after {
+  content: "";
+  height: 1px;
+  width: 40%;
+  display: inline-block;
+  margin: px 0;
+  background-color: rgba(255, 255, 255, 0.3); }
+
+.cargar-codigo-paragraph {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "AmsiNarw-SemiBold", sans-serif;
+  text-align: center;
+  font-size: 0.9em;
+  margin-bottom: 30px; }
+
+.return-message-wrapper {
+  letter-spacing: 1px;
+  padding: 0% 0 0% 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: none;
+  color: #fff; }
+
+.return-message-wrapper a {
+  color: #fff;
+  text-decoration: none; }
+
+#return-message {
+  font-size: 2em; }
+
+#return-message-kms {
+  font: 0.9em "AmsiPro-Light", sans-serif;
+  border-bottom: 30px; }
+
+/*******************************/
+/*                             */
+/*         VER CÓDIGOS         */
+/*                             */
+/*******************************/
+.step-counter-old-codes {
+  width: 100%;
+  display: flex;
+  line-height: 24px;
+  align-items: center;
+  margin: 30px auto; }
+
+.step-counter-old-codes span {
+  font: 0.9em "AmsiPro-Light", sans-serif;
+  letter-spacing: 1px;
+  color: white;
+  line-height: 1.2em;
+  width: 24%;
+  padding: 0 2%;
+  text-align: center; }
+
+.step-counter-old-codes:before, .step-counter-old-codes::after {
+  content: "";
+  height: 1px;
+  width: 36%;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.3); }
+
+.code-items {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2% 10%;
+  justify-content: space-between; }
+
+.code-item-wrapper {
+  color: #fff;
+  font: 1em "AmsiPro-Light", sans-serif;
+  width: 40%;
+  padding: 15px 0;
+  border-bottom: 2px solid rgba(194, 194, 194, 0.315); }
+
+.code-item-wrapper:last-child, .code-item-wrapper:nth-last-child(2) {
+  border: 0; }
+
+.code-item-wrapper p {
+  line-height: 1.6em; }
+
+.code-item-wrapper p span {
+  font: 1em "AmsiPro-Bold", sans-serif; }
+
+.consumos-message-wrapper {
+  width: 75%;
+  margin: 20px auto;
+  background-image: url("../images/recuadro.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0 5% 0 0;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  height: 80px;
+  align-items: center; }
+
+.consumos-message-wrapper span {
+  min-width: 40%;
+  background-image: url("../images/recuadro-span.png");
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  margin-left: 8px;
+  padding: 0 3%; }
+
+.consumos-message-wrapper span img {
+  margin-right: 15px;
+  width: 40px; }
+
+.consumos-message-wrapper p {
+  text-align: center;
+  width: 60%;
+  font: 1.3em "AmsiPro-Light", sans-serif; }
+
+/*******************************/
+/*                             */
+/*         PREMIOS             */
+/*                             */
+/*******************************/
+.btn.voucher {
+  margin-top: 20px;
+  height: 40px;
+  cursor: pointer; }
+
+.api-response {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.658);
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; }
+
+.api-response .response-wrapper {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  width: 50%;
+  height: auto;
+  margin: 0 auto;
+  padding: 5% 10%;
+  background-image: url("../images/Fondo_desktop.jpg");
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  text-align: center; }
+
+#main-message {
+  font-size: 2em; }
+
+#secondary-message {
+  font-size: 1em;
+  margin-bottom: 30px; }
+
+#instructions-message {
+  font: 0.9em "AmsiPro-Light", sans-serif;
+  margin-bottom: 30px; }
+
+/*******************************/
+/*                             */
+/*    BASES Y CONDICIONES      */
+/*                             */
+/*******************************/
+.header-bases {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/Fondo_desktop.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 120px; }
+
+.header-bases img {
+  width: 160px; }
+
+.bases-wrapper {
+  width: 100%;
+  padding: 50px 2%;
+  color: #4B4B4B;
+  width: 70%;
+  margin: 0 auto; }
+
+.bases-wrapper h2 {
+  font-size: 1.286em;
+  letter-spacing: 1px;
+  line-height: 1.714em;
+  text-align: left;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(151, 151, 151, 0.3);
+  color: #4B4B4B;
+  font-family: "AmsiNarw-Bold", sans-serif;
+  text-transform: uppercase; }
+
+.bases-wrapper .bases-title {
+  font-size: 1em;
+  letter-spacing: 1px;
+  line-height: 1.357em;
+  color: #4B4B4B;
+  text-align: left;
+  font-family: "AmsiNarw-Bold", sans-serif;
+  text-transform: uppercase;
+  margin-top: 30px; }
+
+.bases-wrapper .bases-description {
+  color: #4B4B4B;
+  font-family: "AmsiNarw-Regular", sans-serif;
+  font-size: 0.825em;
+  line-height: 1.286rem;
+  text-transform: none;
+  padding-top: 15px;
+  letter-spacing: 1px; }
+
+.bases-wrapper span {
+  padding: 80px 0 00px 0;
+  font-size: .7em;
+  font-family: "AmsiNarw-Regular", sans-serif;
+  text-transform: uppercase;
+  color: #4B4B4B;
+  opacity: .5;
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+
+/*******************************/
+/*                             */
+/*      404 y 500 errores      */
+/*                             */
+/*******************************/
+.header-error {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url("../images/Fondo_desktop.jpg");
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  padding: 50px 0 0 0; }
+
+.header-error .logo {
+  width: 120px; }
+
+.message-error-wrapper {
+  width: 100%;
+  padding: 5% 20%;
+  min-height: 70vh;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.message-error-wrapper img {
+  width: 300px;
+  margin: 0 10%; }
+
+.message-error-wrapper .text-error-wrapper h3 {
+  font-family: "AmsiNarw-Bold", sans-serif;
+  font-size: 1.8em;
+  margin-bottom: 50px; }
+
+.message-error-wrapper .text-error-wrapper p {
+  font-family: "AmsiNarw-Regular", sans-serif;
+  font-size: 1.4em;
+  margin-bottom: 30px; }
+
+/*******************************/
+/*                             */
+/*           profile           */
+/*                             */
+/*******************************/
+.profile-info-wrapper {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  padding: 2% 0; }
+
+.profile-info-wrapper .info-row {
+  display: flex;
+  justify-content: center;
+  padding: 0 5%;
+  align-items: center; }
+
+.profile-info-wrapper .info-row img {
+  height: 130px;
+  margin-right: 100px; }
+
+.profile-info-wrapper .info-row h3 {
+  font-family: "AmsiNarw-Bold", sans-serif;
+  font-size: 1.5em;
+  letter-spacing: 1px; }
+
+.personal-info-text {
+  font-family: "AmsiNarw-Regular", sans-serif;
+  font-size: 1.3em; }
+
+.personal-info-text p {
+  font: 1em "AmsiPro-Light", sans-serif; }
+
+.personal-info-text p span {
+  font-family: "AmsiNarw-Bold", sans-serif;
+  font-size: 0.7em; }
+
+.profile-info-wrapper form label {
+  padding: 0;
+  float: right;
+  font-size: .8em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "AmsiNarw-SemiBold", sans-serif; }
+
+.profile-info-wrapper .logout-button {
+  display: flex;
+  justify-content: center; }
+
+.profile-info-wrapper .logout-button a {
+  font-size: .8em;
+  width: 152px;
+  left: 0;
+  right: 0;
+  padding-left: 20px;
+  margin: 20px auto 30px;
+  position: relative;
+  text-align: center;
+  font-family: "AmsiPro-SemiBold", sans-serif;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase; }
+
+/*******************************/
+/*                             */
+/*         RECUPERAR           */
+/*                             */
+/*******************************/
+.profile-info-wrapper.recuperar {
+  width: 70%;
+  height: 70vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  padding: 2% 0;
+  align-items: center;
+  justify-content: center; }
+
+/*******************************/
+/*                             */
+/*         CATEGORIAS          */
+/*                             */
+/*******************************/
+.categories-wrapper {
+  min-height: 70vh;
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff; }
+
+.icon-category-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 7% 5%;
+  margin-bottom: 40px;
+  width: 100%;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.05); }
+
+.icon-category-wrapper img {
+  height: 200px; }
+
+.category-slider {
+  width: 100%;
+  padding: 30px 0 0;
+  margin-top: 20px; }
+
+.category-slider:before {
+  content: "";
+  width: 100%;
+  height: 4px;
+  display: block;
+  background: #142C27;
+  border-radius: 20px; }
+
+.category-slider div {
+  width: 20%;
+  float: left;
+  position: relative; }
+
+.category-slider div:after {
+  content: "";
+  width: 1.5em;
+  height: 1.5em;
+  display: block;
+  right: 0;
+  top: -1em;
+  position: absolute;
+  background: #1B312C;
+  border: 2px solid #142C27;
+  border-radius: 50%; }
+
+.category-slider div p {
+  font-size: .75rem;
+  font-family: "AmsiPro-SemiBold", sans-serif;
+  margin-top: 35px;
+  text-align: right; }
+
+.category-slider div.active:before {
+  content: "";
+  width: 100%;
+  height: 4px;
+  top: -4px;
+  display: block;
+  position: absolute;
+  background: #DBAD44;
+  border-radius: 20px; }
+
+.category-slider div.active:after {
+  width: 2.5em;
+  height: 2.5em;
+  top: -1.5em;
+  border-color: #97721E;
+  background: url("../images/categoria_lupulo.jpg") no-repeat center;
+  background-size: contain; }
+
+.cargar-codigo-paragraph.premios {
+  width: 70%;
+  margin: 30px auto;
+  font-size: 0.9em;
+  line-heigth: 1.2em;
+  letter-spacing: 1px; }
+
+.canjes-wrapper.premios {
+  align-items: flex-start; }
+
+.home-panel {
+  background-image: url("../images/Fondo_desktop.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh; }
+
+/*******************************/
+/*                             */
+/*         MEDIAQUERY          */
+/*                             */
+/*******************************/
+@media only screen and (max-width: 600px) {
+  .home-wrapper {
+    min-height: 100vh;
+    height: auto; }
+  .landscape-wrapper {
+    display: none; }
+  .form-home-wrapper {
+    width: 100%;
+    height: auto; }
+  .form-home-wrapper h1 {
+    text-align: center; }
+  .form-home-wrapper .home-text-wrapper {
+    padding: 0 5%; }
+  .bases-footer span {
+    text-align: center; }
+  .generate-wrapper {
+    padding: 0 20px;
+    width: 100%; }
+  .form-home-wrapper-steps {
+    width: 100%; }
+  .profile-info-wrapper .info-row, .canjes-wrapper {
+    flex-direction: column; }
+  .profile-info-wrapper .info-row h3 {
+    font-size: 1.2em; }
+  .personal-info-text p {
+    font-size: 0.7em; }
+  .info-container {
+    width: 100%; }
+  .step-counter-home span, .step-counter-code span, .step-counter-old-codes span {
+    width: 70%; }
+  #return-message-kms {
+    text-align: center; }
+  .home-wrapper-info {
+    padding: 10px 5%; }
+  .code-item-wrapper {
+    width: 90%; }
+  .consumos-message-wrapper {
+    width: 100%; }
+  .consumos-message-wrapper span {
+    font-size: 1.2em;
+    min-width: 50%;
+    margin-left: 0; }
+  .consumos-message-wrapper p {
+    font-size: 1.2em; }
+  .cargar-codigo-paragraph.mobile {
+    width: 90%;
+    margin: 30px auto; }
+  .canjes-wrapper.premios.mobile {
+    align-items: center; }
+  .canje-item-wrapper {
+    margin-bottom: 30px; }
+  .categories-wrapper {
+    width: 90%; }
+  .message-error-wrapper {
+    flex-direction: column; }
+  .message-error-wrapper img {
+    width: 100px;
+    margin-bottom: 30px; }
+  .message-error-wrapper {
+    padding: 5% 5%; }
+  .profile-info-wrapper .info-row img {
+    margin: 0; }
+  .personal-info-text {
+    text-align: center; }
+  header .menu-wrapper, header .profile-wrapper {
+    display: none; }
+  header .menu-mobile {
+    display: inline;
+    position: relative; }
+  header .menu-mobile img {
+    width: 25px; }
+  header .menu-mobile-full img {
+    height: 30px; }
+  .header-mobile-menu {
+    display: flex;
+    justify-content: space-between;
+    background-image: url("../images/Fondo_desktop.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 8% 6%; }
+  .header-mobile-menu .close-menu {
+    width: 20px; }
+  #menu-mobile-wrapper {
+    display: none;
+    position: fixed;
+    padding: 0% 0%;
+    height: 100vh;
+    width: 90%;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.963);
+    z-index: 1000;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3); } }
+
+/*# sourceMappingURL=style.css.map */
