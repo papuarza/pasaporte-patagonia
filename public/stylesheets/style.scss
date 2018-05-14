@@ -606,7 +606,7 @@ header .menu-items-wrapper .menu-list-wrapper li a {
   font-size: 1.3em;
 }
 
-header .menu-mobile-full {
+header #menu-mobile-wrapper {
   display: none;
 }
 
@@ -1420,7 +1420,7 @@ header .menu-mobile-full {
     width: 25px;
   }
 
-  header .menu-mobile-full img {
+  header #menu-mobile-wrapper img {
     height: 30px;
   }
 
