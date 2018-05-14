@@ -11,7 +11,11 @@ passport.use(new FacebookStrategy({
   profileFields: ['id', 'displayName', 'email']
 },
 function(accessToken, refreshToken, profile, cb, papu) {
-  console.log(profile, papu)
+  console.log(accessToken)
+  console.log(refreshToken)
+  console.log(profile)
+  console.log(cb)
+  console.log(papu)
   let email = profile.email || '';
   let name = profile.name.givenName || '';
   let lastName = profile.name.familyName || '';
