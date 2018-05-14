@@ -27,7 +27,12 @@ authRoutes.get("/confirmation/:confirmation/:dni", (req, res, next) => {
     if (user.activationCode == confirmationCode) {
       User.updateOne({ dni }, { $set: { status: 'Activado' }})
       .then(userActive => { 
-        res.redirect("/")
+        req.login(user, error => {
+          if (!error) {
+            res.redirect("/")
+          }
+          else next(error)
+        })
       }) 
     } else {
       res.status(400).json({message: 'Error en la activación de la cuenta!'})
