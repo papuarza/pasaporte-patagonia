@@ -8,25 +8,60 @@ mongoose.Promise = Promise;
 
 const prizes = [
   {
-    name: 'Pinta',
-    kms: 100,
+    name: 'Vaso',
+    kms: 45,
     image: 'images/pinta.png'
   },
   {
-    name: 'Carga Growler',
-    kms: 300,
+    name: 'Kit Posa-Vasos',
+    kms: 45,
+    image: 'images/vaso.png'
+  },
+  {
+    name: 'Medias Patagonia',
+    kms: 45,
+    image: 'images/vaso.png'
+  },
+  {
+    name: 'Gorro',
+    kms: 45,
+    image: 'images/gorra.svg'
+  },
+  {
+    name: '4Pack 710ml',
+    kms: 72,
+    image: 'images/vaso.png'
+  },
+  {
+    name: 'Remera Patagonia',
+    kms: 90,
+    image: 'images/camiseta.svg'
+  },
+  {
+    name: '1 Growler + Carga',
+    kms: 135,
     image: 'images/carga.png'
   },
   {
-    name: 'Vaso Patagonia',
-    kms: 400,
+    name: 'Voucher Consumición',
+    kms: 180,
     image: 'images/vaso.png'
+  },
+  {
+    name: 'Buzo',
+    kms: 226,
+    image: 'images/buzo.svg'
+  },
+  {
+    name: 'Mochila',
+    kms: 271,
+    image: 'images/mochila.svg'
   }
 ]
 
 mongoose.connect(dbName, { useMongoClient: true })
   .then(() => {
-    // mongoose.connection.db.dropCollection('prizes');
+    mongoose.connection.db.dropCollection('prizes');
     Prize.create(prizes)
     .then(prizes => {
       prizes.forEach(prize => {

@@ -5,6 +5,8 @@ const codeSchema = new Schema({
   code_id: String,
   kmsValue: Number,
   status: {type: String, enum: ['Pendiente', 'Canjeado']},
+  type: {type: String, enum: ['355ml', '710ml']},
+  test: {type: Boolean},
   usedDate: Date
 }, {
   timestamps: {
