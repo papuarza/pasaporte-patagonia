@@ -178,7 +178,7 @@ authRoutes.post("/panel/login", (req, res, next) => {
 });
 
 authRoutes.get('/facebook',
-  passport.authenticate('facebook'));
+  passport.authenticate('facebook', { scope : ['email'] }));
 
 authRoutes.get('/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/registro' }),
