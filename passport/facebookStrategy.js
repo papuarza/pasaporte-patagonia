@@ -7,7 +7,8 @@ const bcrypt        = require('bcrypt');
 passport.use(new FacebookStrategy({
   clientID: process.env.FACEBOOK_ID,
   clientSecret: process.env.FACEBOOK_SECRET,
-  callbackURL: `${process.env.URL}/auth/facebook/callback`
+  callbackURL: `${process.env.URL}/auth/facebook/callback`,
+  profileFields: ['id', 'displayName', 'email']
 },
 function(accessToken, refreshToken, profile, cb) {
   console.log('=====>', profile)
