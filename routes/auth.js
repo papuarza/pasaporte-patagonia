@@ -178,12 +178,11 @@ authRoutes.post("/panel/login", (req, res, next) => {
 });
 
 authRoutes.get('/facebook',
-  passport.authenticate('facebook', { authType: 'rerequest'}));
+  passport.authenticate('facebook'));
 
 authRoutes.get('/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/registro' }),
   function(req, res) {
-    console.log(req.session)
     res.redirect('/');
   });
 

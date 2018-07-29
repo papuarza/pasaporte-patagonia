@@ -89,7 +89,7 @@ for(let x = 0; x < 3000; x++) {
   codes.push({
     code_id: crypto.randomBytes(5).toString('HEX'),
     kmsValue: 50,
-    type: 'Marketing',
+    type: 'Test',
     status: 'Pendiente',
     test: true
   })
