@@ -15,6 +15,7 @@ renderUserAndPrizes = (req, res, next, render) => {
   .then(user => {
     user['codesQ'] = user.codes.length;
     user['vouchersQ'] = user.vouchers.length;
+    user['kmsToBariloche'] = 2640-user.kmsTotal;
     Prize.find({})
     .sort({kms: 1 })
     .then(prizes => {
@@ -67,30 +68,42 @@ router.get('/codigos', ensureAuthenticated, (req, res, next) => {
 });
 
 router.get('/profile', ensureAuthenticated, (req, res, next) => {
-  User.findById(req.session.passport.user)
-  .then(user => {
-    let day = user['birthdate'].getDate();
-    let month = user['birthdate'].getMonth();
-    let year = user['birthdate'].getFullYear();
-    user['formatDate'] = `${day}/${month+1}/${year}`
-    res.render('profile', {user})
+  User.find({}, {_id: 1})
+  .sort({'kmsTotal': -1})
+  .then(users => {
+    User.findById(req.session.passport.user)
+    .then(user => {
+      usersArray = users.map(u => ''+u._id);
+      let position = usersArray.indexOf(''+user._id)+1;
+      let day = user['birthdate'].getDate();
+      let month = user['birthdate'].getMonth();
+      let year = user['birthdate'].getFullYear();
+      user['formatDate'] = `${day}/${month+1}/${year}`;
+      user['position'] = position;
+      user['kmsToBariloche'] = 2640-user.kmsTotal;
+      res.render('profile', {user})
+    })
   })
   .catch(error => next(error))
 });
 
-router.get('/categorias', ensureAuthenticated, (req, res, next) => {
-  User.findById(req.session.passport.user)
-  .then(user => {
-    let categories = ['Rookie', 'Junior', 'The Man', 'Master', 'God'];
-    let categoriesLevel = [false, false, false, false, false];
-    for(let i = 0; i < categories.length; i++) {
-      categoriesLevel[i] = true;
-      if(categories[i] == user.category.name) break;
-    }
-    user['categoriesLevel'] = categoriesLevel;
-    res.render('categorias', {user})
-  })
-  .catch(error => next(error))
+// router.get('/categorias', ensureAuthenticated, (req, res, next) => {
+//   User.findById(req.session.passport.user)
+//   .then(user => {
+//     let categories = ['Rookie', 'Junior', 'The Man', 'Master', 'God'];
+//     let categoriesLevel = [false, false, false, false, false];
+//     for(let i = 0; i < categories.length; i++) {
+//       categoriesLevel[i] = true;
+//       if(categories[i] == user.category.name) break;
+//     }
+//     user['categoriesLevel'] = categoriesLevel;
+//     res.render('categorias', {user})
+//   })
+//   .catch(error => next(error))
+// });
+
+router.get('/faqs', (req, res, next) => {
+  res.render('faq');
 });
 
 router.get('/bases-condiciones', (req, res, next) => {
@@ -169,7 +182,7 @@ router.get('/registro/step-2', (req, res, next) => {
 router.get('/registro/step-3', (req, res, next) => {
   User.findById(req.session.passport.user)
   .then(user => {
-    res.render('registro/registroTres', {layout: false});
+    res.render('registro/registroTres', {layout: false, user});
   })
   .catch(error => next(error))
 });

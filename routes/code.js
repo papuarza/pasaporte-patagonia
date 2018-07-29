@@ -35,9 +35,9 @@ router.post('/new', (req, res, next) => {
           }, 
           { new: true })
         .then(updatedUser => {
-          Code.updateOne({code_id: value}, {$set: {status: 'Canjeado'}})
+          Code.updateOne({code_id: value}, {$set: {status: 'Canjeado'}}, {new: true})
           .then(codeReady => {
-            res.status(200).json({message: 'El código ha sido añadido correctamente!', subMessage: 'Felicidades!'});
+            res.status(200).json({message: `Has acumulado correctamente ${code.kmsValue}kms!`, subMessage: 'Felicidades!'});
           })
         })
       })

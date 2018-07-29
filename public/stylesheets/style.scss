@@ -115,6 +115,11 @@ body {
 
 .form-home-wrapper h1 {
   font-size: 1.5em;
+  margin-bottom: 00px;
+}
+
+.form-home-wrapper h2 {
+  font-size: 1.2em;
   margin-bottom: 20px;
 }
 
@@ -467,6 +472,10 @@ a:focus, button:focus, input:focus {
   text-align: center;
 }
 
+.message-step-2 span {
+  font: 1em "AmsiPro-Bold", sans-serif;
+}
+
 .usuario-pendiente-img {
   width: 300px;
   margin-bottom: 20px;
@@ -689,10 +698,12 @@ header #menu-mobile-wrapper {
 
 .canjes-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 10px;
   padding: 0 0;
   flex-wrap: wrap;
+  align-content: flex-start;
+  justify-items: flex-start;
 }
 
 .canje-item-wrapper {
@@ -700,7 +711,9 @@ header #menu-mobile-wrapper {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .canje-item-wrapper p {
@@ -712,8 +725,8 @@ header #menu-mobile-wrapper {
 }
 
 .canje-item {
-  width: 10em;
-  height: 10em;
+  width: 8em;
+  height: 8em;
   background-color:rgba(0, 0, 0, 0.33);
   border-radius: 360px;
   position: relative;
@@ -976,6 +989,43 @@ header #menu-mobile-wrapper {
   margin-bottom: 30px;
 }
 
+.viaje-a-bariloche-wrapper {
+  color: #fff;
+  display: flex;
+}
+
+.kms-a-bariloche-wrapper {
+  width: 60%;
+}
+
+.viaje-info-wrapper {
+  width: 40%;
+}
+
+.viaje-a-bariloche-wrapper p {
+  font-size: 1.3rem;
+  text-align: left;
+}
+
+.viaje-a-bariloche-wrapper li {
+  font: 1em "AmsiPro-Light", sans-serif;
+}
+
+.kms-a-bariloche-wrapper {
+  height: 100%;
+  align-items: center;
+  padding: 20px;
+}
+
+.kms-a-bariloche-wrapper p {
+  text-align: center;
+  font: 1.3em "AmsiPro-Light", sans-serif;
+}
+
+.kms-a-bariloche-wrapper p:nth-child(2) {
+  font: 2.4em "AmsiPro-Bold", sans-serif;
+}
+
 
 /*******************************/
 /*                             */
@@ -1144,6 +1194,10 @@ header #menu-mobile-wrapper {
 
 .personal-info-text p {
   font: 1em "AmsiPro-Light", sans-serif;
+}
+
+.personal-info-text strong {
+  font: 1em "AmsiPro-Bold", sans-serif;
 }
 
 .personal-info-text p span {

@@ -7,12 +7,12 @@ const codes = [];
 
 mongoose.Promise = Promise;
 
-for(let x = 0; x < 5000; x++) {
+for(let x = 0; x < 1000; x++) {
   let id = 
   codes.push({
     code_id: crypto.randomBytes(5).toString('HEX'),
     kmsValue: 15,
-    type: '355ml',
+    type: 'Chopp (300ml)',
     status: 'Pendiente',
     test: false
   })
@@ -22,30 +22,74 @@ for(let x = 0; x < 5000; x++) {
   let id = 
   codes.push({
     code_id: crypto.randomBytes(5).toString('HEX'),
-    kmsValue: 30,
-    type: '710ml',
+    kmsValue: 20,
+    type: '2 Pack (710ml)',
     status: 'Pendiente',
     test: false
   })
 }
 
-for(let x = 0; x < 100; x++) {
+for(let x = 0; x < 7000; x++) {
   let id = 
   codes.push({
     code_id: crypto.randomBytes(5).toString('HEX'),
-    kmsValue: 15,
-    type: '355ml',
+    kmsValue: 40,
+    type: '4 Pack (710ml)',
     status: 'Pendiente',
-    test: true
+    test: false
   })
 }
 
-for(let x = 0; x < 100; x++) {
+for(let x = 0; x < 3000; x++) {
+  let id = 
+  codes.push({
+    code_id: crypto.randomBytes(5).toString('HEX'),
+    kmsValue: 60,
+    type: '6 Pack (710ml)',
+    status: 'Pendiente',
+    test: false
+  })
+}
+
+for(let x = 0; x < 3000; x++) {
+  let id = 
+  codes.push({
+    code_id: crypto.randomBytes(5).toString('HEX'),
+    kmsValue: 50,
+    type: '6 Pack (473ml)',
+    status: 'Pendiente',
+    test: false
+  })
+}
+
+for(let x = 0; x < 7000; x++) {
   let id = 
   codes.push({
     code_id: crypto.randomBytes(5).toString('HEX'),
     kmsValue: 30,
-    type: '710ml',
+    type: '6 Pack (355ml)',
+    status: 'Pendiente',
+    test: false
+  })
+}
+
+for(let x = 0; x < 3000; x++) {
+  let id = 
+  codes.push({
+    code_id: crypto.randomBytes(5).toString('HEX'),
+    kmsValue: 50,
+    type: 'Marketing',
+    status: 'Pendiente',
+    test: false
+  })
+}
+
+for(let x = 0; x < 3000; x++) {
+  let id = 
+  codes.push({
+    code_id: crypto.randomBytes(5).toString('HEX'),
+    kmsValue: 50,
+    type: 'Marketing',
     status: 'Pendiente',
     test: true
   })

@@ -6,6 +6,31 @@
     </span>
     <p>DISPONIBLES</p>
   </div>
+
+  <div class="step-counter-home">
+    <span> VIAJE A BARILOCHE</span>
+  </div>
+  <div class="viaje-a-bariloche-wrapper">
+    <div class="kms-a-bariloche-wrapper">
+      <p>Te faltan</p>
+      <p>{{user.kmsToBariloche}} kms</p>
+      <p>para bariloche!</p>
+    </div>
+    <div class="viaje-info-wrapper">
+    <p>Que incluye el viaje?</p>
+    <ul>
+      <li>Pasaje en avión ida y vuelta a Bariloche</li>
+      <li>Estadía en Hotel durante 3 noches</li>
+      <li>Viático para 4 días</li>
+      <li>Tour a la Microcervecería Patagonia</li>
+      <li>Merchandising de la marca</li>
+      <li>Traslados Aeropuerto-Hotel / Hotel-Aeropuerto</li>
+    </ul>
+    </div>
+    
+    
+  </div>
+
   <div class="step-counter-home">
     <span> CANJES DISPONIBLES</span>
   </div>
@@ -19,7 +44,7 @@
         <div class="image-item-container" style="background-image: url('{{this.image}}')"></div>
         <p>
           Faltan
-          <span> {{this.kmsLeft}}kms</span>
+          <span> {{this.kmsLeft}} kms</span>
         </p>
         {{/unless}}
       </div>
@@ -30,6 +55,7 @@
     </div>
     {{/each}}
   </div>
+  <span style="color:#fff; font-size: 0.7rem">*Premios Exclusivos Sujetos a Stock</span>
   <div class="api-response" id="response-message-voucher">
     <div class="response-wrapper">
       <p id="main-message"></p>
