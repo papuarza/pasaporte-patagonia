@@ -57,17 +57,16 @@ authRoutes.post("/signup/password", (req, res, next) => {
 })
 
 authRoutes.post("/signup", (req, res, next) => {
-  const { email, name, lastName, dni, birthdate, gender } = req.body;
+  const { email, name, lastName, dni, birthdate, gender, flag } = req.body;
 
   if (!email || !dni || !name || !lastName || !birthdate || !gender) {
     res.send({ message: "Por favor indica todos los campos!"})
     return;
   }
-
-  User.findOne({ $or: [ { email: email }, { dni: dni } ] })
+  User.findOne({ $or: [{ dni: dni } ] })
   .then(user => {
     if (user !== null) {
-      res.send({ message: "El email o el DNI/Pasaporte ya existen"})
+      res.send({ message: "El DNI/Pasaporte ya existen"})
       return;
     }
 
@@ -183,8 +182,7 @@ authRoutes.get('/facebook',
 authRoutes.get('/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/registro' }),
   function(req, res) {
-    console.log(req.user)
-    res.render('registro/registroUno', {user: req.user, flag: true});
+    res.render('registro/registroUno', {user: req.user, flag: true, layout: false});
   });
 
 module.exports = authRoutes;
