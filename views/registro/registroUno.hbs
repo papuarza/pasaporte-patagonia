@@ -30,10 +30,17 @@
           <input type="text" name="dni" autocomplete="off">
           <label for="">Cédula/Pasaporte</label>
         </fieldset>
+        {{#if flag}}
+        <fieldset>
+          <input type="email" name="email" autocomplete="off" value={{user.email}}>
+          <label for="">Email</label>
+        </fieldset>
+        {{/else}}
         <fieldset>
           <input type="email" name="email" autocomplete="off">
           <label for="">Email</label>
         </fieldset>
+        {{/if}}
         <fieldset class="birthday-row">
           <input type="date" name="birthdate" id="birthdate" style="opacity:0;position:absolute;top:-9000px">
           <div class="day-birth">

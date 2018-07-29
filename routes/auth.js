@@ -184,7 +184,7 @@ authRoutes.get('/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/registro' }),
   function(req, res) {
     console.log(req.user)
-    res.render('registroUno', {user: req.user});
+    res.render('registro/registroUno', {user: req.user, flag: true});
   });
 
 module.exports = authRoutes;
