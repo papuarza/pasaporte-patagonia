@@ -11,15 +11,13 @@ passport.use(new FacebookStrategy({
   profileFields: ['id', 'displayName', 'email', 'name']
 },
 function(accessToken, refreshToken, profile, cb) {
-  console.log('=====>', profile)
-  // let email = profile.email || '';
-  // let name = profile.name.givenName || '';
-  // let lastName = profile.name.familyName || '';
-  // User.create({ email, name, lastName })
-  // .then(user => {
-  //   return cb(null, user);
-  // })
-  return cb(null, profile);
-  // .catch(error => console.log(error))
+  let email = profile.emails[0].value || '';
+  let name = profile.name.givenName || '';
+  let lastName = profile.name.familyName || '';
+  User.create({ email, name, lastName })
+  .then(user => {
+    return cb(null, user);
+  })
+  .catch(error => console.log(error))
 }
 ));
