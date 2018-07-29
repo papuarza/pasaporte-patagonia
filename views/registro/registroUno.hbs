@@ -53,6 +53,12 @@
           <input type="select" name="flag" autocomplete="off">
         {{/if}}
         </fieldset>
+        {{#if flag}}
+        <fieldset style="display:none;">
+          <input type="text" name="userId" autocomplete="off" value={{user._id}}>
+        </fieldset>
+        {{/if}}
+        
         <fieldset class="birthday-row">
           <input type="date" name="birthdate" id="birthdate" style="opacity:0;position:absolute;top:-9000px">
           <div class="day-birth">

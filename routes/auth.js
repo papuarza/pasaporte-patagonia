@@ -78,28 +78,41 @@ authRoutes.post("/signup", (req, res, next) => {
       image: '/images/categorias/categoria_01@2x.png'
     }
 
-    const newUser = new User({
-      email, 
-      name, 
-      lastName, 
-      dni, 
-      birthdate,
-      category, 
-      gender,
-      activationCode
-    });
+    if(!flag) {
+      const newUser = new User({
+        email, 
+        name, 
+        lastName, 
+        dni, 
+        birthdate,
+        category, 
+        gender,
+        activationCode
+      });
 
-    newUser.save()
-    .then(user => {
-      req.login(user, error => {
-        if (!error) {
-          res.redirect('/registro/step-2')
-        }
-        else next(error)
+      newUser.save()
+      .then(user => {
+        req.login(user, error => {
+          if (!error) {
+            res.redirect('/registro/step-2')
+          }
+          else next(error)
+        })
       })
-    })
-    .catch(error => next(error))
-      
+      .catch(error => next(error))
+    } else {
+      const update = {email, name, lastName, dni, birthdate, gender, activationCode}
+      User.findOneAndUpdate({_id: req.body.userId}, {$set: update})
+      .then(user => {
+        req.login(user, error => {
+          if (!error) {
+            res.redirect('/registro/step-2')
+          }
+          else next(error)
+        })
+      })
+      .catch(error => next(error))
+    }
     })
     .catch(error => next(error));
 });
