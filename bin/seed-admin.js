@@ -15,8 +15,23 @@ const admins = [
     role: 'Admin'
   },
   {
-    username: 'store-patagonia',
-    password: 'store2018!',
+    username: 'centrocanje1',
+    password: 'centrocanjeuno!',
+    role: 'Store'
+  },
+  {
+    username: 'centrocanje2',
+    password: 'centrocanjedos!',
+    role: 'Store'
+  },
+  {
+    username: 'centrocanje3',
+    password: 'centrocanjetres!',
+    role: 'Store'
+  },
+  {
+    username: 'centrocanje4',
+    password: 'centrocanjecuatro!',
     role: 'Store'
   }
 ]
@@ -24,7 +39,6 @@ const admins = [
 const hashAdmins = admins.map(elem => {
   let salt = bcrypt.genSaltSync(bcryptSalt);
   let hashPass = bcrypt.hashSync(elem.password, salt);
-  console.log(elem.password)
   elem['password'] = hashPass;
   return elem;
 })
