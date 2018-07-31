@@ -66,6 +66,8 @@
       <p>{{this.name}}</p>
       {{#if available}}
         <button class="btn voucher voucher-button" id="voucher-generate" data-value="{{this._id}}">CANJEAR</button>
+      {{else}}
+      <button class="btn voucher voucher-button-disabled" disabled data-value="{{this._id}}">CANJEAR</button>
       {{/if}}
     </div>
     {{/each}}

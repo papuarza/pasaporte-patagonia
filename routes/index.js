@@ -122,6 +122,7 @@ router.get('/canjes', ensureAuthenticated, (req, res, next) => {
   User.findById(req.session.passport.user)
   .populate('vouchers')
   .populate('prize')
+  .populate('codes')
   .then(user => {
     let voucherPromises = [];
     user.vouchers.forEach(voucher => {
@@ -138,8 +139,11 @@ router.get('/canjes', ensureAuthenticated, (req, res, next) => {
     })
     Promise.all(voucherPromises)
     .then(vouchers => {
-      console.log(vouchers);
-      res.render('canjes', {vouchers});
+      let codes = user.codes.map(code => {
+        code['date'] = formatDate(code)
+        return code;
+      })
+      res.render('canjes', {vouchers, codes});
     })
 
   })
