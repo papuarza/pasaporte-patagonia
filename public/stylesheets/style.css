@@ -72,13 +72,13 @@ body {
   width: 100%;
   min-height: 100vh;
   display: flex;
-  position: relative; }
-
-.landscape-wrapper {
-  width: 50%;
+  position: relative;
   background-image: url("../images/paisaje.jpg");
   background-position: center;
   background-size: cover; }
+
+.landscape-wrapper {
+  width: 50%; }
 
 .form-home-wrapper {
   width: 50%;
@@ -848,7 +848,11 @@ header #menu-mobile-wrapper {
   width: 60%; }
 
 .viaje-info-wrapper {
-  width: 40%; }
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
 
 .viaje-a-bariloche-wrapper p {
   font-size: 1.3rem;
@@ -862,12 +866,16 @@ header #menu-mobile-wrapper {
   align-items: center;
   padding: 20px; }
 
+.kms-a-bariloche-wrapper .canje-item {
+  width: 15em;
+  height: 15em; }
+
+.kms-a-bariloche-wrapper .canje-item-wrapper {
+  margin: 0; }
+
 .kms-a-bariloche-wrapper p {
   text-align: center;
-  font: 1.3em "AmsiPro-Light", sans-serif; }
-
-.kms-a-bariloche-wrapper p:nth-child(2) {
-  font: 2.4em "AmsiPro-Bold", sans-serif; }
+  font: 1.3em "AmsiPro-Bold", sans-serif; }
 
 /*******************************/
 /*                             */

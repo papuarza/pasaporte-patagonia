@@ -73,7 +73,29 @@ for(let x = 0; x < 7000; x++) {
   })
 }
 
-for(let x = 0; x < 3000; x++) {
+for(let x = 0; x < 500; x++) {
+  let id = 
+  codes.push({
+    code_id: crypto.randomBytes(5).toString('HEX'),
+    kmsValue: 10,
+    type: 'Marketing',
+    status: 'Pendiente',
+    test: false
+  })
+}
+
+for(let x = 0; x < 500; x++) {
+  let id = 
+  codes.push({
+    code_id: crypto.randomBytes(5).toString('HEX'),
+    kmsValue: 20,
+    type: 'Marketing',
+    status: 'Pendiente',
+    test: false
+  })
+}
+
+for(let x = 0; x < 500; x++) {
   let id = 
   codes.push({
     code_id: crypto.randomBytes(5).toString('HEX'),
@@ -84,7 +106,7 @@ for(let x = 0; x < 3000; x++) {
   })
 }
 
-for(let x = 0; x < 3000; x++) {
+for(let x = 0; x < 500; x++) {
   let id = 
   codes.push({
     code_id: crypto.randomBytes(5).toString('HEX'),

@@ -150,18 +150,18 @@ router.get('/premios', ensureAuthenticated, (req, res, next) => {
   res.render('premios');
 });
 
-router.get('/consumos', ensureAuthenticated, (req, res, next) => {
-  User.findById(req.session.passport.user)
-  .populate('codes')
-  .then(user => {
-    let codes = user.codes.map(code => {
-      code['date'] = formatDate(code)
-      return code;
-    })
-    res.render('consumos', {user, codes});
-  })
-  .catch(error => next(error))
-});
+// router.get('/consumos', ensureAuthenticated, (req, res, next) => {
+//   User.findById(req.session.passport.user)
+//   .populate('codes')
+//   .then(user => {
+//     let codes = user.codes.map(code => {
+//       code['date'] = formatDate(code)
+//       return code;
+//     })
+//     res.render('consumos', {user, codes});
+//   })
+//   .catch(error => next(error))
+// });
 
 router.get('/registro', (req, res, next) => {
   res.render('registro/index', {layout: false});
