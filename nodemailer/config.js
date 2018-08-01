@@ -14,16 +14,16 @@ module.exports = {
     let subject = '';
     switch (type) {
       case 'activar':
-        message = template.emailingTemplate(user, `${process.env.URL}/auth/confirmation/${user.activationCode}/${user.dni}`, 'Activa tu Cuenta', 'Necesitas confirmar tu cuenta para poder empezar a sumar kilómetros y canjear premios!', 'Hacé click en el botón y empieza a disfrutar de tu Pasaporte Patagonia.');
-        subject = 'Confirma tu dirección de correo y empieza a sumar kilómetros! ✈️🍺'
+        message = template.emailingTemplate(user, `${process.env.URL}/auth/confirmation/${user.activationCode}/${user.dni}`, 'Activa tu Cuenta', '¡Necesitas confirmar tu cuenta para poder empezar a sumar kilómetros y canjear premios!', 'Hacé click en el botón y empieza a disfrutar de tu Pasaporte Patagonia.');
+        subject = '¡Confirma tu dirección de correo y empieza a sumar kilómetros! ✈️🍺'
         break;
       case 'recuperar':
-        subject = 'Recupera tu contraseña y sigue disfrutando del Pasaporte Patagonia! ✈️🍺';
-        message = template.emailingTemplate(user, `${process.env.URL}/auth/recuperar/${user.activationCode}`, 'Recupera tu contraseña', 'Si te olvidaste tu contraseña, no te preocupes, tenemos una solución!', 'Hacé click en el botón y crea una nueva!');
+        subject = '¡Recupera tu contraseña y sigue disfrutando del Pasaporte Patagonia! ✈️🍺';
+        message = template.emailingTemplate(user, `${process.env.URL}/auth/recuperar/${user.activationCode}`, 'Recupera tu contraseña', '¡Si te olvidaste tu contraseña, no te preocupes, tenemos una solución!', '¡Hacé click en el botón y crea una nueva!');
         break;
       case 'voucher':
-        subject = 'Aquí tienes tu Voucher Patagonia! ✈️🍺';
-        message = template.emailingTemplate(user, `${process.env.URL}/canjes`, 'Ver mis Vouchers', 'Este texto todavía hay que ver que poner!', 'Si si si, hay que pensar que poner acá. Alguna explicación o algo!!');
+        subject = '¡Aquí tienes tu Voucher Patagonia! ✈️🍺';
+        message = template.emailingTemplate(user, `${process.env.URL}/canjes`, 'Ver mis Vouchers', '¡Este texto todavía hay que ver que poner!', '¡Si si si, hay que pensar que poner acá. Alguna explicación o algo!!');
         break;
     }
     return transporter.sendMail({

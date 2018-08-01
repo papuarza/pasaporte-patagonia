@@ -15,7 +15,7 @@ renderUserAndPrizes = (req, res, next, render) => {
   .then(user => {
     user['codesQ'] = user.codes.length;
     user['vouchersQ'] = user.vouchers.length;
-    user['kmsToBariloche'] = 2640-user.kmsTotal;
+    user['kmsToBariloche'] = 2640-user.kmsAvailable;
     Prize.find({})
     .sort({kms: 1 })
     .then(prizes => {
@@ -80,7 +80,7 @@ router.get('/profile', ensureAuthenticated, (req, res, next) => {
       let year = user['birthdate'].getFullYear();
       user['formatDate'] = `${day}/${month+1}/${year}`;
       user['position'] = position;
-      user['kmsToBariloche'] = 2640-user.kmsTotal;
+      user['kmsToBariloche'] = 2640-user.kmsAvailable;
       res.render('profile', {user})
     })
   })
