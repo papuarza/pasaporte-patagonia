@@ -1,4 +1,6 @@
 <div class="home-wrapper-info">
+    <h2 class="main-title">¡TU VIAJE HASTA BARILOCHE HA COMENZADO!</h2>
+  <p class="main-p">A medida que vayas acumulando kilómetros, podrás ver en el mapa donde te encuentras en tu camino hasta Bariloche.</p>
   <div class="info-wrapper">
     <p class="info-container">
       KMS DISPONIBLES
@@ -17,13 +19,22 @@
       <span>{{user.codesQ}}</span>
     </p>
   </div>
+
   
-  <div class="step-counter-home">
-    <span> CANJES DISPONIBLES</span>
-  </div>
 
   <div class="canjes-wrapper">
-    {{#each prizes}}
+    
+
+    {{!-- <div id="map-container">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <text x="600" y="100" font-family="AmsiPro-Light" font-size="20" fill="white"> Asunción </text>
+        <text x="00" y="340" font-family="AmsiPro-Light" font-size="20" fill="white"> Bariloche </text>
+        <path fill-opacity="0" stroke-width="10" stroke="#e6e6e650" d="M600 70 Q 115 10 50 300"/>
+        <path id="heart-path" fill-opacity="0" stroke-width="15" stroke="#DBAD44" d="M600 70 Q 115 10 50 300"/>
+        <image xlink:href="images/pin.svg" x="15" y="250" height="50px" width="50px"/>
+      </svg>
+    </div> --}}
+    {{!-- {{#each prizes}}
     <div class="canje-item-wrapper">
       <div class="canje-item">
         {{#if available}}<div class="image-item-container active" style="background-image: url('{{this.image}}')"></div>{{/if}}
@@ -37,6 +48,6 @@
       </div>
       <p>{{this.name}}</p>
     </div>
-    {{/each}}
+    {{/each}} --}}
   </div>
 </div>

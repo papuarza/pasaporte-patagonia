@@ -8,6 +8,7 @@ const bcryptSalt = 10;
 const emailing = require('../nodemailer/config.js');
 
 
+
 authRoutes.get("/login", (req, res, next) => {
   res.render("auth/login", { "message": req.flash("error") });
 });

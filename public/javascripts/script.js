@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
+  
+  var bar = new ProgressBar.Path('#heart-path', {
+    easing: 'easeInOut',
+    duration: 1400
+  });
+  
+  bar.animate(0.40);
+
+  console.log(bar)
+
   validateForm = () => {
     let name = document.forms["step-one-form"]["name"].value;
     let lastName = document.forms["step-one-form"]["lastName"].value;

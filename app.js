@@ -12,6 +12,7 @@ const path         = require('path');
 const session    = require("express-session");
 const MongoStore = require('connect-mongo')(session);
 const flash      = require("connect-flash");
+const ProgressBar = require('progressbar.js')
     
 
 mongoose.Promise = Promise;
@@ -46,6 +47,8 @@ app.use(require('node-sass-middleware')({
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/static', express.static(__dirname + '/node_modules/progressbar.js/dist'));
+//app.use(express.static(path.join(__dirname, '../node_modules/progressbar.js/dist/progressbar.js')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
