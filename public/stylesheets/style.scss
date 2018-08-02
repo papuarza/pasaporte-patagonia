@@ -1149,6 +1149,8 @@ header #menu-mobile-wrapper {
 .faqs-form textarea {
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  padding: 10px 15px;
 }
 
 .faqs-form button {
@@ -1495,12 +1497,15 @@ header #menu-mobile-wrapper {
 
 .legal-wrapper {
   width: 100%;
-  padding: 15px 20%;
+  padding: 10px 10%;
   text-align: center;
-  background-color: #3f3f3f;
+  background-color: #fff;
+  color: #000;
 }
 
-
+.legal-wrapper span {
+  color: #000;
+}
 
 
 /*******************************/
