@@ -497,7 +497,7 @@ header .menu-wrapper ul li a.active {
   border-bottom: 1px solid #fff; }
 
 .bases-footer {
-  padding-bottom: 20px; }
+  padding-bottom: 0px; }
 
 .bases-footer span {
   color: #fff; }
@@ -1266,6 +1266,12 @@ header #menu-mobile-wrapper {
   background-size: cover;
   width: 100%;
   min-height: 100vh; }
+
+.legal-wrapper {
+  width: 100%;
+  padding: 15px 20%;
+  text-align: center;
+  background-color: #3f3f3f; }
 
 /*******************************/
 /*                             */
