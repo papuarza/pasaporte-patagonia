@@ -1277,7 +1277,9 @@ header #menu-mobile-wrapper {
   color: #000; }
 
 .legal-wrapper span {
-  color: #000; }
+  color: #000;
+  font-weight: bold;
+  font-family: "AmsiPro-Bold", sans-serif; }
 
 /*******************************/
 /*                             */
