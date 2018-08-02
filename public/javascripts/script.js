@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     duration: 1400
   });
   
-  bar.animate(0.40);
+  bar.animate(kmsAvailable/2640);
 
-  console.log(bar)
+  console.log()
 
   validateForm = () => {
     let name = document.forms["step-one-form"]["name"].value;

@@ -5,6 +5,10 @@
     <div class="map-wrapper"> 
       <img src="/images/map.png" alt="">
       <div id="map-container">
+        <p>Te faltan <br>
+          <span>{{user.kmsToBariloche}}kms</span><br>
+        kilómetros
+        </p>
       <svg xmlns="http://www.w3.org/2000/svg" width="340" heigth="363">
         <text x="250" y="50" font-family="AmsiPro-Light" font-size="20" fill="white"> Asunción </text>
         <text x="20" y="320" font-family="AmsiPro-Light" font-size="20" fill="#DBAD44"> Bariloche </text>
@@ -33,7 +37,9 @@
     </p>
   </div>
   </div>
-  
+  <script>
+    let kmsAvailable = "{{user.kmsAvailable}}";
+  </script>
 
   
 
