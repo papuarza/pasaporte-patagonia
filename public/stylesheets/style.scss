@@ -1671,5 +1671,13 @@ header #menu-mobile-wrapper {
   .api-response .response-wrapper {
     width: 80%;
   }
+
+  .home-info {
+    flex-direction: column;
+  }
+
+  .map-wrapper, .info-wrapper {
+    width: 100%;
+  } 
 }
 
