@@ -1672,11 +1672,10 @@ header #menu-mobile-wrapper {
     width: 80%;
   }
 
-  .home-info {
+  .home-info, .viaje-a-bariloche-wrapper, .faqs-wrapper{
     flex-direction: column;
   }
-
-  .map-wrapper, .info-wrapper {
+  .map-wrapper, .info-wrapper, .viaje-info-wrapper, .kms-a-bariloche-wrapper, .faqs-text, .faqs-form {
     width: 100%;
   } 
 }
