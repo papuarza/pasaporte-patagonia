@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
+  let map = docuemnt.getElementById('map-container');
+  if(map) {
+    var bar = new ProgressBar.Path('#heart-path', {
+      easing: 'easeInOut',
+      duration: 1400
+    });
+    bar.animate(kmsAvailable/2640);
+  }
   
-  var bar = new ProgressBar.Path('#heart-path', {
-    easing: 'easeInOut',
-    duration: 1400
-  });
-  
-  bar.animate(kmsAvailable/2640);
-
-  console.log()
 
   validateForm = () => {
     let name = document.forms["step-one-form"]["name"].value;
