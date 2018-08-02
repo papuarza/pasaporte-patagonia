@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  let map = docuemnt.getElementById('map-container');
+  let map = document.getElementById('map-container');
   if(map) {
     var bar = new ProgressBar.Path('#heart-path', {
       easing: 'easeInOut',
