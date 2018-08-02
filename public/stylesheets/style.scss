@@ -636,10 +636,9 @@ header #menu-mobile-wrapper {
 
 
 #map-container {
-  width: 800px;
-  height: 350px;
+  width: 340px;
+  height: 363px;
   margin-top: 30px;
-  padding-left: 80px;
 }
 
 #map-container svg {
@@ -661,13 +660,30 @@ header #menu-mobile-wrapper {
   font-family: "AmsiPro-Light", sans-serif;
 }
 
+.home-info {
+  display: flex;
+  width: 100%;
+}
+
+.map-wrapper {
+  display: flex;
+  width: 70%;
+  position: relative;
+  height: 100%;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.map-wrapper img {
+  position: absolute;
+}
+
 .info-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   flex-direction: column;
   width: 30%;
-  margin-left: 70%;
 }
 
 .info-container {
@@ -709,6 +725,8 @@ header #menu-mobile-wrapper {
   align-items: center;
   margin: 30px auto;
 }
+
+
 
 .step-counter-home span {
   font: 1em "AmsiPro-Light", sans-serif;
@@ -1085,7 +1103,57 @@ header #menu-mobile-wrapper {
   font: 1.3em "AmsiPro-Bold", sans-serif;
 }
 
+/*******************************/
+/*                             */
+/*    CONSULTAS FRECUENTES     */
+/*                             */
+/*******************************/
 
+.faqs-wrapper {
+  display: flex;
+}
+
+.faqs-text {
+  width: 70%;
+}
+
+.faqs-form {
+  width: 30%;
+  color: #fff;
+}
+
+.faqs-form p {
+  text-align: center;
+  font: 1em "AmsiPro-Bold", sans-serif;
+  margin-bottom: 40px;
+}
+
+.faqs-form div {
+  margin-bottom: 10px;
+}
+
+.faqs-form label {
+  font: 1em "AmsiPro-Light", sans-serif;
+}
+
+.faqs-form input {
+  font: 1em "AmsiPro-Bold", sans-serif;
+  padding: 10px;
+}
+
+.faqs-form .text-area-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.faqs-form textarea {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.faqs-form button {
+  cursor: pointer;
+}
 
 /*******************************/
 /*                             */

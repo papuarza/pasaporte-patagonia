@@ -17,7 +17,7 @@ renderUserAndPrizes = (req, res, next, render) => {
     user['vouchersQ'] = user.vouchers.length;
     user['kmsToBariloche'] = 2640-user.kmsAvailable;
     Prize.find({})
-    .sort({kms: 1 })
+    .sort({kms: -1 })
     .then(prizes => {
       prizes = prizes.map(prize => {
         prize['kmsLeft'] = prize.kms - user.kmsAvailable < 0 ? 0 : prize.kms - user.kmsAvailable;

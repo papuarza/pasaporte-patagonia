@@ -1,7 +1,20 @@
 <div class="home-wrapper-info">
     <h2 class="main-title">¡TU VIAJE HASTA BARILOCHE HA COMENZADO!</h2>
   <p class="main-p">A medida que vayas acumulando kilómetros, podrás ver en el mapa donde te encuentras en tu camino hasta Bariloche.</p>
-  <div class="info-wrapper">
+  <div class="home-info">
+    <div class="map-wrapper"> 
+      <img src="/images/map.png" alt="">
+      <div id="map-container">
+      <svg xmlns="http://www.w3.org/2000/svg" width="340" heigth="363">
+        <text x="250" y="50" font-family="AmsiPro-Light" font-size="20" fill="white"> Asunción </text>
+        <text x="20" y="320" font-family="AmsiPro-Light" font-size="20" fill="#DBAD44"> Bariloche </text>
+        <path fill-opacity="0" stroke-width="10" stroke="#e6e6e650" d="M250 20 Q 115 10 60 300"/>
+        <path id="heart-path" fill-opacity="0" stroke-width="15" stroke="#DBAD44" d="M250 20 Q 115 10 60 300"/>
+        <image xlink:href="images/pin.svg" x="40" y="250" height="50px" width="50px"/>
+      </svg>
+    </div>
+    </div>
+    <div class="info-wrapper">
     <p class="info-container">
       KMS DISPONIBLES
       <span class="kms-available">{{user.kmsAvailable}}</span>
@@ -19,35 +32,15 @@
       <span>{{user.codesQ}}</span>
     </p>
   </div>
+  </div>
+  
 
   
 
-  <div class="canjes-wrapper">
+
     
 
-    {{!-- <div id="map-container">
-      <svg xmlns="http://www.w3.org/2000/svg">
-        <text x="600" y="100" font-family="AmsiPro-Light" font-size="20" fill="white"> Asunción </text>
-        <text x="00" y="340" font-family="AmsiPro-Light" font-size="20" fill="white"> Bariloche </text>
-        <path fill-opacity="0" stroke-width="10" stroke="#e6e6e650" d="M600 70 Q 115 10 50 300"/>
-        <path id="heart-path" fill-opacity="0" stroke-width="15" stroke="#DBAD44" d="M600 70 Q 115 10 50 300"/>
-        <image xlink:href="images/pin.svg" x="15" y="250" height="50px" width="50px"/>
-      </svg>
-    </div> --}}
-    {{!-- {{#each prizes}}
-    <div class="canje-item-wrapper">
-      <div class="canje-item">
-        {{#if available}}<div class="image-item-container active" style="background-image: url('{{this.image}}')"></div>{{/if}}
-        {{#unless available}}
-        <div class="image-item-container" style="background-image: url('{{this.image}}')"></div>
-        <p>
-          Faltan
-          <span> {{this.kmsLeft}}kms</span>
-        </p>
-        {{/unless}}
-      </div>
-      <p>{{this.name}}</p>
-    </div>
-    {{/each}} --}}
-  </div>
+    
+ 
+ 
 </div>
