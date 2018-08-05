@@ -33,9 +33,9 @@ router.post('/create/:id', (req, res, next) => {
           $push: { vouchers: voucher._id},
         }, {new: true} )
         .then(modifiedInfo => {
-          emailing.sendTheEmail(user, 'voucher')
+          emailing.sendTheEmail(user, 'voucher', voucher)
           .then(info => {
-            res.status(200).json({subMessage: "Felicidades!", message: "El voucher ha sido creado correctamente!", instructions: 'En tu email recibirás un mensaje con el voucher y las instrucciones. También puedes revisar la sección "Canjes" del la web para ver tus vouchers.', redirection: 'VER CANJES', ref:'/canjes'})
+            res.status(200).json({subMessage: "Felicidades!", message: "Tu voucher ha sido generado.", instructions: 'En tu mail recibirás el voucher y las instrucciones para canjear tu premio. Para más información sobre tus vouchers, ingresá a la sección CANJES.', redirection: 'VER CANJES', ref:'/canjes'})
           })
           .catch(error => next(error))
         })
@@ -47,12 +47,10 @@ router.post('/create/:id', (req, res, next) => {
 
 router.post('/validate', (req, res, next) => {
   const voucherId = req.body.voucher;
-  console.log(voucherId)
   Voucher.findOne({voucher: voucherId})
   .populate('user')
   .populate('prize')
   .then(voucher => {
-    console.log(voucher)
     if(!voucher) {
       res.status(200).json({message: 'No existe ningún voucher con ese código!', subMessage: 'Lo sentimos!'})
     } else if (voucher.status == 'Utilizado') {

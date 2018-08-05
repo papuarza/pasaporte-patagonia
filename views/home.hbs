@@ -12,28 +12,25 @@
       <svg xmlns="http://www.w3.org/2000/svg" width="340" heigth="363">
         <text x="250" y="50" font-family="AmsiPro-Light" font-size="20" fill="white"> Asunción </text>
         <text x="20" y="320" font-family="AmsiPro-Light" font-size="20" fill="#DBAD44"> Bariloche </text>
-        <path fill-opacity="0" stroke-width="10" stroke="#e6e6e650" d="M250 20 Q 115 10 60 300"/>
-        <path id="heart-path" fill-opacity="0" stroke-width="15" stroke="#DBAD44" d="M250 20 Q 115 10 60 300"/>
+        <path fill-opacity="0" stroke-width="5" stroke="#e6e6e650" d="M250 20 Q 115 10 60 300"/>
+        <path id="heart-path" fill-opacity="0" stroke-width="5" stroke="#DBAD44" d="M250 20 Q 115 10 60 300"/>
+        <image xlink:href="images/pin-as.svg" x="239" y="0" height="23px" width="23px"/>
         <image xlink:href="images/pin.svg" x="40" y="250" height="50px" width="50px"/>
       </svg>
     </div>
     </div>
     <div class="info-wrapper">
     <p class="info-container">
-      KMS DISPONIBLES
-      <span class="kms-available">{{user.kmsAvailable}}</span>
-    </p>
-    <p class="info-container">
       KMS ACUMULADOS
-      <span>{{user.kmsTotal}}</span>
-    </p>
-    <p class="info-container">
-      PREMIOS CANJEADOS
-      <span>{{user.vouchersQ}}</span>
+      <span>{{user.kmsAvailable}}</span>
     </p>
     <p class="info-container">
       CÓDIGOS CARGADOS
       <span>{{user.codesQ}}</span>
+    </p>
+    <p class="info-container">
+      PREMIOS CANJEADOS
+      <span>{{user.vouchersQ}}</span>
     </p>
   </div>
   </div>

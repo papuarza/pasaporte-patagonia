@@ -1,5 +1,5 @@
 module.exports = {
-  emailingTemplate: (user, url, callToAction, welcomeMessage, finalMessage) => {
+  emailingTemplate: (user, url, callToAction, welcomeMessage, finalMessage, extraInfo) => {
     return `
     <!doctype html>
     <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -208,7 +208,7 @@ module.exports = {
               <td align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;">
                 
       <div style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:20px;line-height:1;text-align:center;color:#000;">
-        <strong>Ya estás registrado ${user.name}!</strong>
+        <strong>${welcomeMessage} ${user.name}!</strong>
       </div>
     
               </td>
@@ -218,7 +218,7 @@ module.exports = {
               <td align="center" style="font-size:0px;padding:0 25px;word-break:break-word;">
                 
       <div style="font-family:Arial;font-size:18px;line-height:1;text-align:center;color:#000000;">
-        ${welcomeMessage}
+        ${extraInfo}
       </div>
     
               </td>

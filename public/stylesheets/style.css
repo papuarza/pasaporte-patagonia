@@ -592,7 +592,12 @@ header #menu-mobile-wrapper {
   flex-wrap: wrap;
   justify-content: space-between;
   flex-direction: column;
-  width: 30%; }
+  width: 30%;
+  padding: 5% 0; }
+
+.profile-image-wrapper img {
+  width: auto;
+  height: 60px; }
 
 .info-container {
   width: 100%;
@@ -1117,8 +1122,8 @@ header #menu-mobile-wrapper {
   align-items: center; }
 
 .profile-info-wrapper .info-row img {
-  height: 130px;
-  margin-right: 100px; }
+  height: 100px;
+  margin-right: 50px; }
 
 .profile-info-wrapper .info-row h3 {
   font-family: "AmsiNarw-Bold", sans-serif;
@@ -1286,11 +1291,11 @@ header #menu-mobile-wrapper {
   width: 100%;
   padding: 10px 10%;
   text-align: center;
-  background-color: #fff;
+  background-color: transparent;
   color: #000; }
 
 .legal-wrapper span {
-  color: #000;
+  color: #fff;
   font-weight: bold;
   font-family: "AmsiPro-Bold", sans-serif;
   font-size: 10px; }
@@ -1396,9 +1401,9 @@ header #menu-mobile-wrapper {
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3); }
   .api-response .response-wrapper {
     width: 80%; }
-  .home-info {
+  .home-info, .viaje-a-bariloche-wrapper, .faqs-wrapper {
     flex-direction: column; }
-  .map-wrapper, .info-wrapper {
+  .map-wrapper, .info-wrapper, .viaje-info-wrapper, .kms-a-bariloche-wrapper, .faqs-text, .faqs-form {
     width: 100%; } }
 
 /*# sourceMappingURL=style.css.map */

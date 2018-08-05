@@ -16,16 +16,16 @@
       <img src="/images/logo-color.png" alt="" class="logo-home">
       <h2>¡Cada Cerveza te lleva a Bariloche!</h2>
       <p class="step-counter">Paso 2 de 3</p>
-      <h3>Elegí un password</h3>
-      <p class="message-step-2">Tu usuario es tu Cédula y ahora tenés que confirmar la password para el acceso al panel.</p>
+      <h3>Elegí una contraseña</h3>
+      <p class="message-step-2">Tu usuario es tu Nro. de Cédula. Ahora tenés que elegir una contraseña de acceso.</p>
       <form action="/auth/signup/password" method="post" onsubmit="return validateSecondStepForm()" name="step-two-form">
         <fieldset>
           <input type="password" name="password" autocomplete="off">
-          <label for="">Password</label>
+          <label for="">Contraseña</label>
         </fieldset>
         <fieldset>
           <input type="password" name="repeat" autocomplete="off">
-          <label for="">Confirmar password</label>
+          <label for="">Confirmar contraseña</label>
         </fieldset>
         <p id="form-error-message"></p>
         <button type="submit" class="btn data-confirm">CONFIRMAR CONTRASEÑA</button>
