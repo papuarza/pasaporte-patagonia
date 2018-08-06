@@ -1021,6 +1021,34 @@ header #menu-mobile-wrapper {
 
 /*******************************/
 /*                             */
+/*         CONSULTAR             */
+/*                             */
+/*******************************/
+
+
+.faqs-text {
+  color: #fff;
+  font: 0.9em "AmsiPro-Bold", sans-serif;
+  padding: 0 10% 0 0;
+}
+
+.faq-answer {
+  font: 0.8em "AmsiPro-Light", sans-serif;
+}
+
+.faq-question-wrapper {
+  padding: 10px 0;
+  margin: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.185);
+}
+
+.faq-question-wrapper:last-child {
+  border: 0;
+}
+
+
+/*******************************/
+/*                             */
 /*         PREMIOS             */
 /*                             */
 /*******************************/
