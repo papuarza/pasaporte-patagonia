@@ -538,6 +538,33 @@ header #menu-mobile-wrapper {
 .home-wrapper-info {
   padding: 10px 17%; }
 
+.map-label {
+  color: #fff;
+  font-family: "AmsiPro-Bold", sans-serif;
+  font-size: 18px;
+  position: absolute;
+  top: 0; }
+
+.map-pin.bariloche {
+  width: 30px;
+  position: absolute;
+  top: 62%;
+  left: -3%; }
+
+.map-pin.asuncion {
+  width: 30px;
+  position: absolute;
+  top: -10%;
+  left: 38%; }
+
+.map-label.asuncion {
+  left: 38%;
+  top: 3%; }
+
+.map-label.bariloche {
+  top: 74%;
+  left: 0%; }
+
 #map-container {
   width: 513px;
   height: 389px;
@@ -549,7 +576,9 @@ header #menu-mobile-wrapper {
 
 #map-container svg {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  position: relative;
+  z-index: 500; }
 
 .map-image-wrapper {
   background-image: url(../images/map.png);
@@ -587,7 +616,8 @@ header #menu-mobile-wrapper {
 
 .home-info {
   display: flex;
-  width: 100%; }
+  width: 100%;
+  overflow-x: hidden; }
 
 .map-wrapper {
   display: flex;
