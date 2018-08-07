@@ -7,6 +7,8 @@ const codes = [];
 
 mongoose.Promise = Promise;
 
+/*
+
 for(let x = 0; x < 1000; x++) {
   let id = 
   codes.push({
@@ -117,9 +119,44 @@ for(let x = 0; x < 500; x++) {
   })
 }
 
+*/
+
+for(let x = 0; x < 1000; x++) {
+  let id = 
+  codes.push({
+    code_id: crypto.randomBytes(5).toString('HEX'),
+    kmsValue: 20,
+    type: '2 Pack (710ml)',
+    status: 'Pendiente',
+    test: false
+  })
+}
+
+for(let x = 0; x < 1000; x++) {
+  let id = 
+  codes.push({
+    code_id: crypto.randomBytes(5).toString('HEX'),
+    kmsValue: 40,
+    type: '4 Pack (710ml)',
+    status: 'Pendiente',
+    test: false
+  })
+}
+
+for(let x = 0; x < 1000; x++) {
+  let id = 
+  codes.push({
+    code_id: crypto.randomBytes(5).toString('HEX'),
+    kmsValue: 30,
+    type: '6 Pack (355ml)',
+    status: 'Pendiente',
+    test: false
+  })
+}
+
 mongoose.connect(dbName, { useMongoClient: true })
   .then(() => {
-    mongoose.connection.db.dropCollection('codes')
+    //mongoose.connection.db.dropCollection('codes')
     Code.create(codes)
     .then(codes => {
       console.log(`Se han creado ${codes.length} códigos`);

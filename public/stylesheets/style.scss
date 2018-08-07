@@ -636,11 +636,13 @@ header #menu-mobile-wrapper {
 
 
 #map-container {
-  width: 340px;
-  height: 363px;
-  margin-top: 30px;
-  position: relative;
+  width: 513px;
+  height: 389px;
+  position: absolute;
   text-align: center;
+  top: 145px;
+  left: 93px;
+  margin-top: 20px;
 }
 
 #map-container svg {
@@ -648,16 +650,27 @@ header #menu-mobile-wrapper {
   height: 100%;
 }
 
-#map-container p {
-  color: #fff;
-    font-size: 24px;
-    position: absolute;
-    top: 30%;
-    left: 45%;
-    font-family: "AmsiPro-Light", sans-serif;
+.map-image-wrapper {
+  background-image: url(../images/map.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 393px;
+  height: 525px;
+  margin-top: 50px;
 }
 
-#map-container p span {
+.kilometers-left {
+  color: #fff;
+  font-size: 24px;
+  font-family: "AmsiPro-Light", sans-serif;
+  display: block;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.kilometers-left span {
   font-family: "AmsiPro-Bold", sans-serif;
 }
 
@@ -686,7 +699,9 @@ header #menu-mobile-wrapper {
   position: relative;
   height: 100%;
   justify-content: center;
-  padding-top: 30px;
+  padding-top: 0px;
+  flex-wrap: wrap;
+  height: 500px;
 }
 
 .map-wrapper img {
