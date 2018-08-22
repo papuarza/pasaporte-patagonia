@@ -554,7 +554,7 @@ header #menu-mobile-wrapper {
 .map-pin.asuncion {
   width: 30px;
   position: absolute;
-  top: -10%;
+  top: -11%;
   left: 38%; }
 
 .map-label.asuncion {
@@ -617,7 +617,8 @@ header #menu-mobile-wrapper {
 .home-info {
   display: flex;
   width: 100%;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  height: 500px; }
 
 .map-wrapper {
   display: flex;

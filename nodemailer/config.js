@@ -14,7 +14,7 @@ module.exports = {
     let subject = '';
     switch (type) {
       case 'activar':
-        message = template.emailingTemplate(user, `${process.env.URL}/auth/confirmation/${user.activationCode}/${user.dni}`, 'Activa tu Cuenta', '¡Necesitas confirmar tu cuenta para poder empezar a sumar kilómetros y canjear premios!', 'Hacé click en el botón y empieza a disfrutar de tu Pasaporte Patagonia.');
+        message = template.emailingTemplate(user, `${process.env.URL}/auth/confirmation/${user.activationCode}/${user.dni}`, 'Activa tu Cuenta', '¡Necesitas confirmar tu cuenta para poder empezar a sumar kilómetros y canjear premios ', 'Hacé click en el botón y empieza a disfrutar de tu Pasaporte Patagonia.', '');
         subject = '¡Confirma tu dirección de correo y empieza a sumar kilómetros! ✈️🍺'
         break;
       case 'recuperar':
