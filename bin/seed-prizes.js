@@ -18,28 +18,23 @@ const prizes = [
     image: 'images/riegsse-w.svg'
   },
   {
-    name: 'Vaso Nonic',
-    kms: 60,
-    image: 'images/nonic-w.svg'
-  },
-  {
-    name: 'Growler',
+    name: 'Growler + Carga',
     kms: 80,
     image: 'images/crawler-w.svg'
   },
   {
-    name: 'Remera Patagonia',
-    kms: 80,
+    name: 'Remera',
+    kms: 100,
     image: 'images/remera-w.svg'
   },
   {
-    name: 'Gorro',
-    kms: 100,
+    name: 'Kepi',
+    kms: 80,
     image: 'images/gorra-w.svg'
   },
   {
-    name: 'Buzo',
-    kms: 150,
+    name: 'Abridor',
+    kms: 40,
     image: 'images/buzo-w.svg'
   },
   {
@@ -49,7 +44,7 @@ const prizes = [
   }
 ]
 
-mongoose.connect(dbName, { useMongoClient: true })
+mongoose.connect(dbName)
   .then(() => {
     mongoose.connection.db.dropCollection('prizes');
     Prize.create(prizes)
@@ -66,3 +61,9 @@ mongoose.connect(dbName, { useMongoClient: true })
   .catch(error => {
     console.log(error)
   })
+
+  // {
+  //   name: 'Vaso Nonic',
+  //   kms: 60,
+  //   image: 'images/nonic-w.svg'
+  // },

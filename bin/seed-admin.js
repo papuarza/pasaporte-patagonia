@@ -43,7 +43,7 @@ const hashAdmins = admins.map(elem => {
   return elem;
 })
 
-mongoose.connect(dbName, { useMongoClient: true })
+mongoose.connect(dbName)
   .then(() => {
     mongoose.connection.db.dropCollection('admins');
     Admin.create(hashAdmins)

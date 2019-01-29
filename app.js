@@ -17,7 +17,7 @@ const ProgressBar = require('progressbar.js')
 
 mongoose.Promise = Promise;
 mongoose
-  .connect(process.env.MONGODB_URI, {useMongoClient: true})
+  .connect(process.env.MONGODB_URI)
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
