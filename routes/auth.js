@@ -123,11 +123,12 @@ authRoutes.get("/logout", (req, res) => {
 });
 
 authRoutes.post("/edit", (req, res) => {
+  console.log(req.body);
   const { email, password } = req.body;
   const salt = bcrypt.genSaltSync(bcryptSalt);
   const hashPass = bcrypt.hashSync(password, salt);
-  const update = {$set: {email, password: hashPass}}
-  User.findByIdAndUpdate(req.session.passport.user, update, {new: true})
+  const update = {$set: {password: hashPass}}
+  User.findOneAndUpdate({ email: email }, update, {new: true})
   .then(user => {
     res.redirect('/')
   })

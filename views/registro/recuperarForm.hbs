@@ -21,7 +21,7 @@
       </div>
       <form action="/auth/edit" method="post" onsubmit="return validateProfileForm()" name="profile-form">
     <fieldset>
-      <input type="email" name="email" autocomplete="off" value="{{user.email}}" disabled>
+      <input type="email" name="email" value="{{user.email}}" readonly>
       <label for="">Email</label>
     </fieldset>
     <fieldset>

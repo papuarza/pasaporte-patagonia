@@ -53,6 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if(password == '' || email == '') {
       document.getElementById("form-error-message").innerHTML = "Debe rellenar todos los campos!"
       return false
+    } else {
+      return true;
     }
   }
 
