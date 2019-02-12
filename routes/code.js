@@ -25,7 +25,13 @@ router.post('/new', (req, res, next) => {
       return;
     } else {
       User.findOne({_id: userId})
+      .populate('codes')
       .then(user => {
+        let usedCode = user.codes.filter(codeElem => codeElem.code_id == value);
+        if(usedCode.length > 0) {
+          res.status(200).json({message: 'El código promocional solo puede ser utilizado una vez.', subMessage: 'Lo sentimos!'})
+          return;
+        } else {
         let newCategory = userCategory(user.kmsTotal+code['kmsValue']);
         User.updateOne( {_id: userId}, 
           {
@@ -35,16 +41,22 @@ router.post('/new', (req, res, next) => {
           }, 
           { new: true })
         .then(updatedUser => {
-          Code.updateOne({code_id: value}, {$set: {status: 'Canjeado'}}, {new: true})
-          .then(codeReady => {
-            res.status(200).json({message: `Has acumulado correctamente ${code.kmsValue}kms!`, subMessage: 'Felicidades!'});
+          Code.findOne({code_id: value})
+          .then(codeFind => {
+            codeFind.type == 'Programatic' ? update = {$set: {status: 'Pendiente'}} : update = {$set: {status: 'Canjeado'}};
+            Code.updateOne({code_id: value}, update, {new: true})
+            .then(codeReady => {
+              res.status(200).json({message: `Has acumulado correctamente ${code.kmsValue}kms!`, subMessage: 'Felicidades!'});
+            })
           })
+          
         })
+      };
       })
     }
   })
   .catch(error => next(error))
-  
 });
+
 
 module.exports = router;
