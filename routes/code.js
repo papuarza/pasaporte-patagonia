@@ -27,7 +27,8 @@ router.post('/new', (req, res, next) => {
       User.findOne({_id: userId})
       .populate('codes')
       .then(user => {
-        let usedCode = user.codes.filter(codeElem => codeElem.code_id == value);
+        let usedCode = []; 
+        usedCode = user.codes.filter(codeElem => codeElem.code_id == value);
         if(usedCode.length > 0) {
           res.status(200).json({message: 'El código promocional solo puede ser utilizado una vez.', subMessage: 'Lo sentimos!'})
           return;
