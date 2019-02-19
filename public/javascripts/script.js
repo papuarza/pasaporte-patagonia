@@ -229,7 +229,8 @@ document.addEventListener('DOMContentLoaded', () => {
           document.getElementById("redirection-button").innerHTML = response.data.redirection;
           document.getElementById("redirection-button").href = response.data.ref;
         })
-        .catch(error => {
+        .catch(response => {
+          console.log(response);
           document.getElementById("response-message-voucher").style.display = "flex";
           document.getElementById("main-message").innerHTML = response.data.subMessage;
           document.getElementById("secondary-message").innerHTML = response.data.message;
