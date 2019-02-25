@@ -7,6 +7,16 @@ const Prize = require("../models/Prize.js");
 const Voucher = require("../models/Voucher.js");
 const emailing = require('../nodemailer/config.js');
 
+
+ensureStoreRole = (req, res, next) => {
+  if (req.isAuthenticated()) {
+    User.findById(req.session.passport.user)
+    .then(user => {
+      user.role == 'Store' ? next() : res.redirect('/panel')
+    })
+  }
+}
+
 router.post('/create/:id', (req, res, next) => {
   const userId = req.session.passport.user;
   const prizeId = req.params.id;
@@ -62,7 +72,7 @@ router.post('/validate', (req, res, next) => {
   .catch(error => next(error))
 });
 
-router.get('/trade/:voucher', (req, res, next) => {
+router.get('/trade/:voucher', ensureStoreRole, (req, res, next) => {
   const voucherId = req.params.voucher;
   Voucher.findOne({voucher: voucherId})
   .then(voucher => {
@@ -71,7 +81,7 @@ router.get('/trade/:voucher', (req, res, next) => {
     } else if (voucher.status == 'Utilizado') {
       res.render('admin/voucherTrade', {message: 'El voucher ya ha sido utilizado!'})
     } else {
-      Voucher.updateOne({voucher: voucherId}, {$set: {status: 'Utilizado'}}, {new: true})
+      Voucher.updateOne({voucher: voucherId}, {$set: {status: 'Utilizado', centro: req.user._id}}, {new: true})
       .then(newVoucher => {
         res.render('admin/voucherTrade', {message: 'El voucher ha sido procesado correctamente!'})
       })

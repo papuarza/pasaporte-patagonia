@@ -2,6 +2,7 @@ const express = require('express');
 const router  = express.Router();
 const User = require("../models/User.js");
 const Prize = require("../models/Prize.js");
+const Voucher = require("../models/Voucher.js");
 
 formatDate = (elem) => {
   let day = elem['created_at'].getDate();
@@ -34,6 +35,7 @@ ensureAuthenticated = (req, res, next) => {
   if (req.isAuthenticated()) {
     User.findById(req.session.passport.user)
     .then(user => {
+      if(user.role == 'Store') res.redirect('/store-panel')
       if(user.status == 'Activado') return next();
       else res.redirect('/activar-cuenta')
     })
@@ -44,10 +46,12 @@ ensureAuthenticated = (req, res, next) => {
 }
 
 ensureStoreRole = (req, res, next) => {
-  if(req.app.locals.user) {
-    if(req.app.locals.user.role == 'Store') return next();
-    else res.redirect('/panel')
-  } else res.redirect('/panel')
+  if (req.isAuthenticated()) {
+    User.findById(req.session.passport.user)
+    .then(user => {
+      user.role == 'Store' ? next() : res.redirect('/panel')
+    })
+  }
 }
 
 router.get('/', ensureAuthenticated, (req, res, next) => {
@@ -86,21 +90,6 @@ router.get('/profile', ensureAuthenticated, (req, res, next) => {
   })
   .catch(error => next(error))
 });
-
-// router.get('/categorias', ensureAuthenticated, (req, res, next) => {
-//   User.findById(req.session.passport.user)
-//   .then(user => {
-//     let categories = ['Rookie', 'Junior', 'The Man', 'Master', 'God'];
-//     let categoriesLevel = [false, false, false, false, false];
-//     for(let i = 0; i < categories.length; i++) {
-//       categoriesLevel[i] = true;
-//       if(categories[i] == user.category.name) break;
-//     }
-//     user['categoriesLevel'] = categoriesLevel;
-//     res.render('categorias', {user})
-//   })
-//   .catch(error => next(error))
-// });
 
 router.get('/faqs', (req, res, next) => {
   res.render('faq');
@@ -154,18 +143,6 @@ router.get('/premios', ensureAuthenticated, (req, res, next) => {
   res.render('premios');
 });
 
-// router.get('/consumos', ensureAuthenticated, (req, res, next) => {
-//   User.findById(req.session.passport.user)
-//   .populate('codes')
-//   .then(user => {
-//     let codes = user.codes.map(code => {
-//       code['date'] = formatDate(code)
-//       return code;
-//     })
-//     res.render('consumos', {user, codes});
-//   })
-//   .catch(error => next(error))
-// });
 
 router.get('/registro', (req, res, next) => {
   res.render('registro/index', {layout: false});
@@ -216,5 +193,18 @@ router.get('/store-panel', ensureStoreRole, (req, res, next) => {
   res.render('admin/voucherControl', {layout: false})
 });
 
+router.get('/canjes-realizados', ensureStoreRole, (req, res, next) => {
+  Voucher.find({centro: req.user._id})
+  .populate('user')
+  .populate('prize')
+  .then(vouchers => {
+    res.render('admin/vouchersCanjeados', {layout: false, vouchers});
+  })
+  .catch(error => next(error))
+});
+
+router.get('/premios-entregados', ensureStoreRole, (req, res, next) => {
+  res.render('admin/voucherControl', {layout: false})
+});
 
 module.exports = router;

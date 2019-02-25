@@ -123,7 +123,6 @@ authRoutes.get("/logout", (req, res) => {
 });
 
 authRoutes.post("/edit", (req, res) => {
-  console.log(req.body);
   const { email, password } = req.body;
   const salt = bcrypt.genSaltSync(bcryptSalt);
   const hashPass = bcrypt.hashSync(password, salt);
@@ -184,8 +183,11 @@ authRoutes.post("/panel/login", (req, res, next) => {
       next(null, false, { message: 'Incorrect password' });
       return;
     } else {
-      req.app.locals.user = user;
-      res.redirect('/store-panel')
+      req.login(user, function(err) {
+        if (err) { return next(err); }
+        req.app.locals.user = user;
+        res.redirect('/store-panel')
+      });
     }
   })
 });

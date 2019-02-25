@@ -61,6 +61,8 @@ hbs.registerHelper('ifUndefined', (value, options) => {
       return options.fn(this);
   }
 });
+
+hbs.registerHelper('dateFormat', require('handlebars-dateformat'));
   
 
 // default value for title local

@@ -3,36 +3,71 @@ const crypto = require("crypto");
 const mongoose = require('mongoose');
 const bcrypt       = require('bcrypt');
 const bcryptSalt   = 10;
-const Admin = require('../models/Admin.js');
+const User = require('../models/User.js');
 const dbName = process.env.MONGODB_URI;
 
 mongoose.Promise = Promise;
 
 const admins = [
   {
-    username: 'admin-patagonia',
+    dni: 'admin-patagonia',
     password: 'patagonia2018!',
-    role: 'Admin'
+    role: 'Admin',
+    status: 'Activado'
   },
   {
-    username: 'centrocanje1',
+    dni: 'centrocanje1',
     password: 'centrocanjeuno!',
-    role: 'Store'
+    role: 'Store',
+    status: 'Activado'
   },
   {
-    username: 'centrocanje2',
+    dni: 'centrocanje2',
     password: 'centrocanjedos!',
-    role: 'Store'
+    role: 'Store',
+    status: 'Activado'
   },
   {
-    username: 'centrocanje3',
+    dni: 'centrocanje3',
     password: 'centrocanjetres!',
-    role: 'Store'
+    role: 'Store',
+    status: 'Activado'
   },
   {
-    username: 'centrocanje4',
+    dni: 'centrocanje4',
     password: 'centrocanjecuatro!',
-    role: 'Store'
+    role: 'Store',
+    status: 'Activado'
+  },
+  {
+    dni: 'centrocanje5',
+    password: 'centrocanjecinco!',
+    role: 'Store',
+    status: 'Activado'
+  },
+  {
+    dni: 'centrocanje6',
+    password: 'centrocanjeseis!',
+    role: 'Store',
+    status: 'Activado'
+  },
+  {
+    dni: 'centrocanje7',
+    password: 'centrocanjesiete!',
+    role: 'Store',
+    status: 'Activado'
+  },
+  {
+    dni: 'centrocanje8',
+    password: 'centrocanjeocho!',
+    role: 'Store',
+    status: 'Activado'
+  },
+  {
+    dni: '1',
+    password: '1',
+    role: 'Store',
+    status: 'Activado'
   }
 ]
 
@@ -45,11 +80,10 @@ const hashAdmins = admins.map(elem => {
 
 mongoose.connect(dbName)
   .then(() => {
-    mongoose.connection.db.dropCollection('admins');
-    Admin.create(hashAdmins)
+    User.create(hashAdmins)
     .then(admins => {
       admins.forEach(admin => {
-        console.log(`${admin.username} ha sido creado!`)
+        console.log(`${admin.dni} ha sido creado!`)
       })
       mongoose.connection.close();
     })
