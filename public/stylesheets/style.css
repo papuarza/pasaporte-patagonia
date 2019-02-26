@@ -1516,6 +1516,13 @@ table.vouchers-table td {
   .home-info, .viaje-a-bariloche-wrapper, .faqs-wrapper {
     flex-direction: column; }
   .map-wrapper, .info-wrapper, .viaje-info-wrapper, .kms-a-bariloche-wrapper, .faqs-text, .faqs-form {
-    width: 100%; } }
+    width: 100%; }
+  .home-wrapper-info .main-p {
+    margin-bottom: 20px; }
+  .home-info {
+    height: auto; }
+  .map-wrapper {
+    min-height: 50vh;
+    order: 1; } }
 
 /*# sourceMappingURL=style.css.map */

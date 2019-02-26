@@ -1816,5 +1816,18 @@ table.vouchers-table td {
   .map-wrapper, .info-wrapper, .viaje-info-wrapper, .kms-a-bariloche-wrapper, .faqs-text, .faqs-form {
     width: 100%;
   } 
+
+  .home-wrapper-info .main-p {
+    margin-bottom: 20px;
+  }
+
+  .home-info {
+    height: auto;
+  }
+
+  .map-wrapper {
+    min-height: 50vh;
+    order: 1;
+  }
 }
 
