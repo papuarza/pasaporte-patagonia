@@ -12,7 +12,8 @@ const path         = require('path');
 const session    = require("express-session");
 const MongoStore = require('connect-mongo')(session);
 const flash      = require("connect-flash");
-const ProgressBar = require('progressbar.js')
+const ProgressBar = require('progressbar.js');
+const helpers = require('handlebars-helpers');
     
 
 mongoose.Promise = Promise;
@@ -63,7 +64,8 @@ hbs.registerHelper('ifUndefined', (value, options) => {
 });
 
 hbs.registerHelper('dateFormat', require('handlebars-dateformat'));
-  
+
+hbs.registerHelper('minus', helpers.math().minus);
 
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';

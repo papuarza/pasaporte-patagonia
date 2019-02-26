@@ -13,28 +13,32 @@
      <div class="form-home-wrapper-steps" style="background: transparent; width: 100%;">
       <img src="/images/logo-color.png" alt="" class="logo-home">
      </div>
-      
-     {{!-- <div class="navigation-wrapper">
-       <a href="/canjes-realizados">Canjes Realizados</a>
+     <div class="navigation-wrapper">
+       <a href="/usuarios">LISTA USUARIOS</a>
        {{!-- <a href="/premios-entregados">Premios Entregados</a> --}}
-     </div> --}}
-   <div class="step-counter-code">
-       <span>VOUCHER</span>
+     </div>
+   <div class="step-counter-code vouchers-canjeados">
+       <span>TOTAL VOUCHERS CANJEADOS: {{vouchers.length}}</span>
     </div>
-    <p class="cargar-codigo-paragraph">INGRESAR EL CÓDIGO DEL VOUCHER</p>
-    <form>
-        <fieldset>
-          <input type="text" name="code" autocomplete="off" id="voucher-value">
-        </fieldset>
-        <button type="submit" class="btn data-confirm" id="voucher-check">ENVIAR</button>
-    </form>
-    <div class="return-message-wrapper" id="message-wrapper">
-      <p id="return-message"></p>
-      <p id="return-message-kms"></p>
-      <p id="voucher-owner"></p>
-      <p id="voucher-prize"></p>
-      <a href="" class="btn" id="trade-voucher">CANJEAR VOUCHER</a>
-    </div>
+    <table class="vouchers-table">
+      <tr>
+      <th>Usuario</th>
+      <th>Kilómetros</th>
+      <th>Premio</th>
+      <th>Fecha</th>
+      <th>Centro</th>
+      </tr>
+       {{#each vouchers}}
+       <tr>
+       <td>{{this.user.name}} {{this.user.lastName}}</td>
+       <td>{{this.prize.kms}}</td>
+       <td>{{this.prize.name}}</td>
+      <td>{{dateFormat this.updated_at "DD/MM/YYYY, h:mm:ss a"}}</td>
+      <td>{{this.centro.dni}}</td>
+      </tr>
+      {{/each}}
+      
+    </table>
 <div class="logout-button">
     <a href="/logout">Cerrar Sesión</a>
   </div>

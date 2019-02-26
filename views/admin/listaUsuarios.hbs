@@ -13,26 +13,32 @@
      <div class="form-home-wrapper-steps" style="background: transparent; width: 100%;">
       <img src="/images/logo-color.png" alt="" class="logo-home">
      </div>
-     <div class="navigation-wrapper">
-       <a href="/store-panel">Canjear Voucher</a>
-       {{!-- <a href="/premios-entregados">Premios Entregados</a> --}}
-     </div>
+     {{!-- <div class="navigation-wrapper">
+       <a href="/vouchers-totales">Vouchers Canjeados</a>
+       {{!-- <a href="/premios-totales">Premios Entregados</a> --}}
+     </div> --}}
    <div class="step-counter-code vouchers-canjeados">
-       <span>VOUCHERS CANJEADOS EN ESTE CENTRO: {{vouchers.length}}</span>
+       <span>TOTAL USUARIOS DE LA APLICACIÓN: {{users.length}}</span>
     </div>
     <table class="vouchers-table">
       <tr>
-      <th>Usuario</th>
-      <th>Kilómetros</th>
-      <th>Premio</th>
-      <th>Fecha</th>
+        <th>DNI</th>
+      <th class="user-cell">Usuario</th>
+      <th>Kilómetros Actuales</th>
+      <th>Kilómetros Utilizados</th>
+      <th>Kilómetros Totales</th>
+      <th>Códigos Cargados</th>
+      <th>Vouchers Canjeados</th>
       </tr>
-       {{#each vouchers}}
+       {{#each users}}
        <tr>
-       <td>{{this.user.name}} {{this.user.lastName}}</td>
-       <td>{{this.prize.kms}}</td>
-       <td>{{this.prize.name}}</td>
-      <td>{{dateFormat this.updated_at "DD/MM/YYYY, h:mm:ss a"}}</td>
+        <td>{{this.dni}}</td>
+        <td>{{this.name}} {{this.lastName}}</td>
+        <td>{{this.kmsAvailable}}</td>
+        <td>{{minus this.kmsTotal this.kmsAvailable}}</td>
+        <td>{{this.kmsTotal}}</td>
+        <td>{{this.codes.length}}</td>
+        <td>{{this.vouchers.length}}</td>
       </tr>
       {{/each}}
       

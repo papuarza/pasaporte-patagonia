@@ -18,6 +18,7 @@
     "express-session": "^1.15.6",
     "fs": "0.0.1-security",
     "handlebars-dateformat": "^1.1.1",
+    "handlebars-helpers": "^0.10.0",
     "hbs": "~4.0.1",
     "mongoose": "~5.4.7",
     "morgan": "~1.9.0",

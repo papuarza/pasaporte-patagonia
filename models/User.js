@@ -7,7 +7,7 @@ const userSchema = new Schema({
   name: String,
   lastName: String,
   dni: String,
-  role: String,
+  role: {type: String, default: 'User'} ,
   birthdate: { type: Date, default: Date.now() },
   gender: {type: String, enum: ['hombre', 'mujer']},
   codes: [{ type: Schema.Types.ObjectId, ref: 'Code' }],

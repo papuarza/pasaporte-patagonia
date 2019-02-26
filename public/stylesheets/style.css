@@ -1381,6 +1381,9 @@ table.vouchers-table {
   font: 0.9em "AmsiPro-Light", sans-serif;
   border-collapse: collapse; }
 
+table .user-cell {
+  min-width: 150px; }
+
 table.vouchers-table th {
   font: 0.9em "AmsiPro-Bold", sans-serif;
   border: 1px solid;

@@ -35,9 +35,15 @@ ensureAuthenticated = (req, res, next) => {
   if (req.isAuthenticated()) {
     User.findById(req.session.passport.user)
     .then(user => {
-      if(user.role == 'Store') res.redirect('/store-panel')
-      if(user.status == 'Activado') return next();
-      else res.redirect('/activar-cuenta')
+      if(user.role == 'Store') {
+        res.redirect('/store-panel')
+      } else if(user.role == 'Admin') {
+        res.redirect('/usuarios');
+      } else if(user.status == 'Activado') {
+        return next();
+      } else {
+        res.redirect('/activar-cuenta')
+      }
     })
     .catch(error => next(error))
   } else {
@@ -50,6 +56,15 @@ ensureStoreRole = (req, res, next) => {
     User.findById(req.session.passport.user)
     .then(user => {
       user.role == 'Store' ? next() : res.redirect('/panel')
+    })
+  }
+}
+
+ensureAdminRole = (req, res, next) => {
+  if (req.isAuthenticated()) {
+    User.findById(req.session.passport.user)
+    .then(user => {
+      user.role == 'Admin' ? next() : res.redirect('/panel')
     })
   }
 }
@@ -204,7 +219,52 @@ router.get('/canjes-realizados', ensureStoreRole, (req, res, next) => {
 });
 
 router.get('/premios-entregados', ensureStoreRole, (req, res, next) => {
-  res.render('admin/voucherControl', {layout: false})
+  let premiosEntregados = {
+    'Mochila': 0,
+    'Kepi': 0,
+    'VoucherConsumición': 0,
+    'Remera': 0,
+    'VasoRiegsse': 0,
+    'GrowlerCarga': 0,
+    'Abridor': 0
+  };
+  Voucher.find({centro: req.user._id})
+  .populate('prize')
+  .then(vouchers => {
+    premiosEntregados['Mochila'] = vouchers.filter(voucher => voucher.prize.name == "Mochila").length;
+    premiosEntregados['Kepi'] = vouchers.filter(voucher => voucher.prize.name == "Kepi").length;
+    premiosEntregados['VoucherConsumición'] = vouchers.filter(voucher => voucher.prize.name == "Voucher Consumición").length;
+    premiosEntregados['Remera'] = vouchers.filter(voucher => voucher.prize.name == "Remera").length;
+    premiosEntregados['VasoRiegsse'] = vouchers.filter(voucher => voucher.prize.name == "Vaso Riegsse").length;
+    premiosEntregados['GrowlerCarga'] = vouchers.filter(voucher => voucher.prize.name == "Growler + Carga").length;
+    premiosEntregados['Abridor'] = vouchers.filter(voucher => voucher.prize.name == "Abridor").length;
+    res.render('admin/voucherControl', {layout: false, premiosEntregados});
+  })
+  .catch(error => next(error))
+});
+
+router.get('/usuarios', ensureAdminRole, (req, res, next) => {
+  User.find({role: 'User'})
+  .sort({kmsAvailable: -1})
+  .then(users => {
+    res.render('admin/listaUsuarios', {layout: false, users})
+  })
+  .catch(error => next(error))
+});
+
+router.get('/vouchers-totales', ensureAdminRole, (req, res, next) => {
+  Voucher.find()
+  .populate('user')
+  .populate('prize')
+  .populate('centro')
+  .then(vouchers => {
+    res.render('admin/vouchersTotales', {layout: false, vouchers});
+  })
+  .catch(error => next(error))
+});
+
+router.get('/premios-totales', ensureStoreRole, (req, res, next) => {
+  res.render('admin/premiosTotales', {layout: false})
 });
 
 module.exports = router;
