@@ -127,7 +127,7 @@ authRoutes.post("/edit", (req, res) => {
   const salt = bcrypt.genSaltSync(bcryptSalt);
   const hashPass = bcrypt.hashSync(password, salt);
   const update = {$set: {password: hashPass}}
-  User.findOneAndUpdate({ email: email }, update, {new: true})
+  User.findOneAndUpdate({ email }, update, {new: true})
   .then(user => {
     res.redirect('/')
   })

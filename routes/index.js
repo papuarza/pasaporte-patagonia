@@ -32,6 +32,7 @@ renderUserAndPrizes = (req, res, next, render) => {
 }
 
 ensureAuthenticated = (req, res, next) => {
+  console.log(req.isAuthenticated());
   if (req.isAuthenticated()) {
     User.findById(req.session.passport.user)
     .then(user => {
