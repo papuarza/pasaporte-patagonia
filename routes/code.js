@@ -33,26 +33,30 @@ router.post('/new', (req, res, next) => {
           res.status(200).json({message: 'El código promocional solo puede ser utilizado una vez.', subMessage: 'Lo sentimos!'})
           return;
         } else {
-        let newCategory = userCategory(user.kmsTotal+code['kmsValue']);
-        User.updateOne( {_id: userId}, 
-          {
-            $push: { codes: code._id},
-            $set:  { category: newCategory},
-            $inc:  { kmsTotal: code['kmsValue'], kmsAvailable: code['kmsValue']}
-          }, 
-          { new: true })
-        .then(updatedUser => {
-          Code.findOne({code_id: value})
-          .then(codeFind => {
-            codeFind.type == 'Programatic' ? update = {$set: {status: 'Pendiente'}} : update = {$set: {status: 'Canjeado'}};
-            Code.updateOne({code_id: value}, update, {new: true})
-            .then(codeReady => {
-              res.status(200).json({message: `Has acumulado correctamente ${code.kmsValue}kms!`, subMessage: 'Felicidades!'});
+          userTodayCode = user.codes.filter(codeElem => `${codeElem.updated_at.getDate()}/${codeElem.updated_at.getMonth()+1}/${codeElem.updated_at.getFullYear()}` == `${new Date().getDate()}/${new Date().getMonth()+1}/${new Date().getFullYear()}`);
+          if(userTodayCode.length > 4) {
+            res.status(200).json({message: 'Solo puedes cargar 5 códigos diarios, mañana puedes intentarlo otra vez!', subMessage: 'Lo sentimos!'})
+          } else {
+            let newCategory = userCategory(user.kmsTotal+code['kmsValue']);
+            User.updateOne( {_id: userId}, 
+            {
+              $push: { codes: code._id},
+              $set:  { category: newCategory},
+              $inc:  { kmsTotal: code['kmsValue'], kmsAvailable: code['kmsValue']}
+            }, 
+            { new: true })
+            .then(updatedUser => {
+              Code.findOne({code_id: value})
+              .then(codeFind => {
+                codeFind.type == 'Programatic' ? update = {$set: {status: 'Pendiente'}} : update = {$set: {status: 'Canjeado'}};
+                Code.updateOne({code_id: value}, update, {new: true})
+                .then(codeReady => {
+                  res.status(200).json({message: `Has acumulado correctamente ${code.kmsValue}kms!`, subMessage: 'Felicidades!'});
+                })
+              })
             })
-          })
-          
-        })
-      };
+          };
+        };
       })
     }
   })
