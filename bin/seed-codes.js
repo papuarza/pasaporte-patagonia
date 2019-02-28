@@ -124,6 +124,22 @@ codes.push({
   test: false
 })
 
+codes.push({
+  code_id: crypto.randomBytes(5).toString('HEX'),
+  kmsValue: 5,
+  type: 'Programatic',
+  status: 'Pendiente',
+  test: false
+})
+
+codes.push({
+  code_id: crypto.randomBytes(5).toString('HEX'),
+  kmsValue: 5,
+  type: 'Programatic',
+  status: 'Pendiente',
+  test: false
+})
+
 
 mongoose.connect(dbName)
   .then(() => {
