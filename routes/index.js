@@ -3,6 +3,7 @@ const router  = express.Router();
 const User = require("../models/User.js");
 const Prize = require("../models/Prize.js");
 const Voucher = require("../models/Voucher.js");
+const emailing = require('../nodemailer/config.js');
 
 formatDate = (elem) => {
   let day = elem['created_at'].getDate();
@@ -32,7 +33,6 @@ renderUserAndPrizes = (req, res, next, render) => {
 }
 
 ensureAuthenticated = (req, res, next) => {
-  console.log(req.isAuthenticated());
   if (req.isAuthenticated()) {
     User.findById(req.session.passport.user)
     .then(user => {
@@ -113,6 +113,11 @@ router.get('/faqs', (req, res, next) => {
 
 router.post('/enviar-consulta', (req, res, next) => {
   console.log(req.body)
+  emailing.sendTheEmail({}, 'contactar', req.body)
+    .then(info => {
+      res.status(200).json({message: 'El correo ha sido enviado!'})
+    })
+    .catch(error => next(error));
 });
 
 router.get('/bases-condiciones', (req, res, next) => {
