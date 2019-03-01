@@ -21,6 +21,7 @@
     </div>
     <table class="vouchers-table">
       <tr>
+        <th>No.</th>
         <th>DNI</th>
       <th class="user-cell">Usuario</th>
       <th>Kilómetros Actuales</th>
@@ -31,6 +32,7 @@
       </tr>
        {{#each users}}
        <tr>
+         <td>{{@index}}</td>
         <td>{{this.dni}}</td>
         <td>{{this.name}} {{this.lastName}}</td>
         <td>{{this.kmsAvailable}}</td>

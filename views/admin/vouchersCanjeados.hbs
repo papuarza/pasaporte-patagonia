@@ -21,6 +21,7 @@
     </div>
     <table class="vouchers-table">
       <tr>
+      <th>No.</th>
       <th>Usuario</th>
       <th>Kilómetros</th>
       <th>Premio</th>
@@ -28,6 +29,7 @@
       </tr>
        {{#each vouchers}}
        <tr>
+        <td>{{@index}}</td>
        <td>{{this.user.name}} {{this.user.lastName}}</td>
        <td>{{this.prize.kms}}</td>
        <td>{{this.prize.name}}</td>
