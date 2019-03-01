@@ -77,13 +77,13 @@ router.get('/trade/:voucher', ensureStoreRole, (req, res, next) => {
   Voucher.findOne({voucher: voucherId})
   .then(voucher => {
     if(!voucher) {
-      res.render('admin/voucherTrade', {message: 'No existe ningún voucher con ese código!'})
+      res.render('admin/voucherTrade', {layout: false, message: 'No existe ningún voucher con ese código!'})
     } else if (voucher.status == 'Utilizado') {
-      res.render('admin/voucherTrade', {message: 'El voucher ya ha sido utilizado!'})
+      res.render('admin/voucherTrade', {layout: false, message: 'El voucher ya ha sido utilizado!'})
     } else {
       Voucher.updateOne({voucher: voucherId}, {$set: {status: 'Utilizado', centro: req.user._id}}, {new: true})
       .then(newVoucher => {
-        res.render('admin/voucherTrade', {message: 'El voucher ha sido procesado correctamente!'})
+        res.render('admin/voucherTrade', {layout: false, message: 'El voucher ha sido procesado correctamente!'})
       })
     }
   })
