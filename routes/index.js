@@ -111,6 +111,10 @@ router.get('/faqs', (req, res, next) => {
   res.render('faq');
 });
 
+router.post('/enviar-consulta', (req, res, next) => {
+  console.log(req.body)
+});
+
 router.get('/bases-condiciones', (req, res, next) => {
   res.render('bases', {layout: false});
 });
