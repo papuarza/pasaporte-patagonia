@@ -112,7 +112,6 @@ router.get('/faqs', (req, res, next) => {
 });
 
 router.post('/enviar-consulta', (req, res, next) => {
-  console.log(req.body)
   emailing.sendTheEmail({}, 'contactar', req.body)
     .then(info => {
       res.status(200).json({message: 'El correo ha sido enviado!'})
