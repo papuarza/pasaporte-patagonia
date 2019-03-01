@@ -59,7 +59,6 @@ authRoutes.post("/signup/password", (req, res, next) => {
 
 authRoutes.post("/signup", (req, res, next) => {
   const { email, name, lastName, dni, birthdate, gender, flag } = req.body;
-  dni = dni.replace(/./g, '')
   if (!email || !dni || !name || !lastName || !birthdate || !gender) {
     res.send({ message: "Por favor indica todos los campos!"})
     return;
