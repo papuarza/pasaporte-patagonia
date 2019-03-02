@@ -25,10 +25,10 @@
         <th>DNI</th>
       <th class="user-cell">Usuario</th>
       <th>Kilómetros Actuales</th>
-      <th>Kilómetros Utilizados</th>
-      <th>Kilómetros Totales</th>
-      <th>Códigos Cargados</th>
-      <th>Vouchers Canjeados</th>
+      <th class="no-mobile">Kilómetros Utilizados</th>
+      <th class="no-mobile">Kilómetros Totales</th>
+      <th class="no-mobile">Códigos Cargados</th>
+      <th class="no-mobile">Vouchers Canjeados</th>
       </tr>
        {{#each users}}
        <tr>
@@ -36,10 +36,10 @@
         <td>{{this.dni}}</td>
         <td>{{this.name}} {{this.lastName}}</td>
         <td>{{this.kmsAvailable}}</td>
-        <td>{{minus this.kmsTotal this.kmsAvailable}}</td>
-        <td>{{this.kmsTotal}}</td>
-        <td>{{this.codes.length}}</td>
-        <td>{{this.vouchers.length}}</td>
+        <td class="no-mobile">{{minus this.kmsTotal this.kmsAvailable}}</td>
+        <td class="no-mobile">{{this.kmsTotal}}</td>
+        <td class="no-mobile">{{this.codes.length}}</td>
+        <td class="no-mobile">{{this.vouchers.length}}</td>
       </tr>
       {{/each}}
       

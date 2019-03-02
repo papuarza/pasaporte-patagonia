@@ -1830,5 +1830,13 @@ table.vouchers-table td {
     min-height: 50vh;
     order: 1;
   }
+
+  .no-mobile {
+    display: none;
+  }
+
+  table .user-cell {
+    min-width: 100px;
+}
 }
 

@@ -23,17 +23,17 @@
       <tr>
       <th>No.</th>
       <th>Usuario</th>
-      <th>Kilómetros</th>
+      <th class="no-mobile">Kilómetros</th>
       <th>Premio</th>
-      <th>Fecha</th>
+      <th class="no-mobile">Fecha</th>
       </tr>
        {{#each vouchers}}
        <tr>
         <td>{{@index}}</td>
        <td>{{this.user.name}} {{this.user.lastName}}</td>
-       <td>{{this.prize.kms}}</td>
+       <td class="no-mobile">{{this.prize.kms}}</td>
        <td>{{this.prize.name}}</td>
-      <td>{{dateFormat this.updated_at "DD/MM/YYYY, h:mm:ss a"}}</td>
+      <td class="no-mobile">{{dateFormat this.updated_at "DD/MM/YYYY, h:mm:ss a"}}</td>
       </tr>
       {{/each}}
       

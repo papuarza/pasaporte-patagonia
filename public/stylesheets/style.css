@@ -1524,6 +1524,10 @@ table.vouchers-table td {
     height: auto; }
   .map-wrapper {
     min-height: 50vh;
-    order: 1; } }
+    order: 1; }
+  .no-mobile {
+    display: none; }
+  table .user-cell {
+    min-width: 100px; } }
 
 /*# sourceMappingURL=style.css.map */
