@@ -1584,6 +1584,8 @@ table.vouchers-table td {
   table .user-cell {
     min-width: 100px; }
   .info-wrapper-container {
-    width: 100%; } }
+    width: 100%; }
+  .tutorial-image-wrapper {
+    background-image: url("../images/tutorial-mobile.jpg"); } }
 
 /*# sourceMappingURL=style.css.map */
