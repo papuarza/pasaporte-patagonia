@@ -262,7 +262,7 @@ router.get('/usuarios', ensureAdminRole, (req, res, next) => {
 });
 
 router.get('/vouchers-totales', ensureAdminRole, (req, res, next) => {
-  Voucher.find()
+  Voucher.find({status: 'Utilizado'})
   .populate('user')
   .populate('prize')
   .populate('centro')
