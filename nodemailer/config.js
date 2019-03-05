@@ -26,7 +26,7 @@ module.exports = {
         break;
       case 'voucher':
         subject = '¡Aquí tienes tu Voucher Patagonia! ✈️🍺';
-        message = template.emailingTemplate(user, `${process.env.URL}/canjes`, 'Ver mis Vouchers', '¡Has generado un voucher', 'Para canjear tu premio acercate a uno de nuestros puntos de canje con el código de tu voucher.', `El código de tu voucher es: <strong>${extraInfo.voucher}</strong>`);
+        message = template.emailingTemplate(user, `${process.env.URL}/canjes`, 'Ver mis Vouchers', '¡Has generado un voucher', 'Para canjear tu premio acercate a uno de nuestros puntos de canje con el código de tu voucher.y cédula de identidad', `El código de tu voucher es: <strong>${extraInfo.voucher}</strong>`);
         email = user.email;
         break;
       case 'contactar':
