@@ -80,6 +80,38 @@ body {
 .landscape-wrapper {
   width: 50%; }
 
+.tutorial-image-wrapper {
+  background-image: url("../images/ventana.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 74vh;
+  width: 80%;
+  margin: auto;
+  position: fixed;
+  left: 10%;
+  top: 13vh;
+  z-index: 4; }
+
+#tutorial-wrapper img {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: calc(13vh + 30px);
+  right: calc(10% + 30px);
+  cursor: pointer;
+  z-index: 5; }
+
+#tutorial-wrapper {
+  background-color: rgba(0, 0, 0, 0.7);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 4; }
+
 .form-home-wrapper {
   width: 50%;
   min-height: 100vh;
@@ -1127,6 +1159,28 @@ header #menu-mobile-wrapper {
   display: flex;
   justify-content: center; }
 
+.info-row-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 100px; }
+
+.info-wrapper-container {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  width: 25%;
+  justify-content: center;
+  margin-bottom: 30px; }
+
+.info-wrapper-container p {
+  font-size: 85px;
+  font-family: "AmsiNarw-Regular", sans-serif; }
+
+.info-wrapper-container span {
+  font: 25px "AmsiPro-Light", sans-serif; }
+
 /*******************************/
 /*                             */
 /*      404 y 500 errores      */
@@ -1528,6 +1582,8 @@ table.vouchers-table td {
   .no-mobile {
     display: none; }
   table .user-cell {
-    min-width: 100px; } }
+    min-width: 100px; }
+  .info-wrapper-container {
+    width: 100%; } }
 
 /*# sourceMappingURL=style.css.map */

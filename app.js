@@ -66,6 +66,7 @@ hbs.registerHelper('ifUndefined', (value, options) => {
 hbs.registerHelper('dateFormat', require('handlebars-dateformat'));
 
 hbs.registerHelper('minus', helpers.math().minus);
+hbs.registerHelper('add', helpers.math().add);
 
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title>Cerveza Patagonia</title>
+</head>
+<body>
+ <div class="home-wrapper-info home-panel">
+     <div class="form-home-wrapper-steps" style="background: transparent; width: 100%;">
+      <img src="/images/logo-color.png" alt="" class="logo-home">
+     </div>
+     <div class="navigation-wrapper">
+       <a href="/usuarios">LISTA USUARIOS</a>
+       <a href="/vouchers-totales">Vouchers Canjeados</a>
+     </div>
+   <div class="step-counter-code vouchers-canjeados">
+       <span>INFO DE LA APLICACIÓN</span>
+    </div>
+    
+    <div class="info-row-wrapper">
+      <div class="info-wrapper-container">
+        <p>{{users.length}}</p>
+        <span>USUARIOS ACTIVOS</span>
+      </div>
+      <div class="info-wrapper-container">
+        <p>{{codes.length}}</p>
+        <span>CÓDIGOS CANJEADOS</span>
+      </div>
+      <div class="info-wrapper-container">
+        <p>{{add vouchersUtilizados.length vouchersGenerados.length}}</p>
+        <span>VOUCHERS GENERADOS</span>
+      </div>
+      <div class="info-wrapper-container">
+        <p>{{vouchersUtilizados.length}}</p>
+        <span>VOUCHERS CANJEADOS</span>
+      </div>
+    </div>
+<div class="logout-button">
+    <a href="/logout">Cerrar Sesión</a>
+  </div>
+</div>
+  <script src='/javascripts/script.js'></script>
+</body>
+</html>

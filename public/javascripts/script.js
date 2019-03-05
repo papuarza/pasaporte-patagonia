@@ -7,6 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     bar.animate(kmsAvailable/2640);
   }
+
+  let closePopUpButton = document.getElementById('close-pop-up');
+  if(closePopUpButton) {
+    closePopUpButton.addEventListener('click', () => {
+      document.getElementById('tutorial-wrapper').style.display = 'none'
+    })
+  }
   
 
   validateForm = () => {

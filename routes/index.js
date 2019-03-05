@@ -3,6 +3,7 @@ const router  = express.Router();
 const User = require("../models/User.js");
 const Prize = require("../models/Prize.js");
 const Voucher = require("../models/Voucher.js");
+const Code = require("../models/Code.js");
 const emailing = require('../nodemailer/config.js');
 
 formatDate = (elem) => {
@@ -274,6 +275,23 @@ router.get('/vouchers-totales', ensureAdminRole, (req, res, next) => {
 
 router.get('/premios-totales', ensureStoreRole, (req, res, next) => {
   res.render('admin/premiosTotales', {layout: false})
+});
+
+
+router.get('/info-promo', ensureAdminRole, (req, res, next) => {
+  User.find({role: 'User'})
+  .then(users => {
+    Code.find({status: 'Canjeado', test: false})
+    .then(codes => {
+      Voucher.find({status: 'Generado'})
+      .then(vouchersGenerados => {
+        Voucher.find({status: 'Utilizado'})
+        .then(vouchersUtilizados => {
+          res.render('admin/infoPromo', {layout: false, codes, vouchersGenerados, vouchersUtilizados, users})
+        })
+      })
+    })
+  })
 });
 
 module.exports = router;
