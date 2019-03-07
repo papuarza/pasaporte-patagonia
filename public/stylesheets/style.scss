@@ -1914,5 +1914,14 @@ table.vouchers-table td {
   right: 30px;
   width: 35px;
 }
+
+.navigation-wrapper {
+  flex-direction: column;
+}
+
+.navigation-wrapper a {
+  margin-bottom: 15px;
+}
+
 }
 

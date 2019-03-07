@@ -40,7 +40,7 @@ ensureAuthenticated = (req, res, next) => {
       if(user.role == 'Store') {
         res.redirect('/store-panel')
       } else if(user.role == 'Admin') {
-        res.redirect('/usuarios');
+        res.redirect('/info-promo');
       } else if(user.status == 'Activado') {
         return next();
       } else {

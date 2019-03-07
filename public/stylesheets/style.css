@@ -1586,9 +1586,15 @@ table.vouchers-table td {
   .info-wrapper-container {
     width: 100%; }
   .tutorial-image-wrapper {
-    background-image: url("../images/tutorial-mobile.jpg"); }
+    background-image: url("../images/tutorial-mobile.jpg");
+    top: 8vh; }
   #tutorial-wrapper img {
     top: 30px;
-    right: 30px; } }
+    right: 30px;
+    width: 35px; }
+  .navigation-wrapper {
+    flex-direction: column; }
+  .navigation-wrapper a {
+    margin-bottom: 15px; } }
 
 /*# sourceMappingURL=style.css.map */
