@@ -13,21 +13,25 @@ module.exports = {
     let message = '';
     let subject = '';
     let email = '';
+    let fromSender = '';
     switch (type) {
       case 'activar':
         message = template.emailingTemplate(user, `${process.env.URL}/auth/confirmation/${user.activationCode}/${user.dni}`, 'Activa tu Cuenta', '¡Necesitas confirmar tu cuenta para poder empezar a sumar kilómetros y canjear premios ', 'Hacé click en el botón y empieza a disfrutar de tu Pasaporte Patagonia.', '');
         subject = '¡Confirma tu dirección de correo y empieza a sumar kilómetros! ✈️🍺';
         email = user.email;
+        fromSender = '"Pasaporte Patagonia - ✈️🍺" <pasaporte@patagonia.com>';
         break;
       case 'recuperar':
         subject = '¡Recupera tu contraseña y sigue disfrutando del Pasaporte Patagonia! ✈️🍺';
         message = template.emailingTemplate(user, `${process.env.URL}/auth/recuperar/${user.activationCode}`, 'Recupera tu contraseña', '¡Si te olvidaste tu contraseña, no te preocupes, tenemos una solución!', '¡Hacé click en el botón y crea una nueva!');
         email = user.email;
+        fromSender = '"Pasaporte Patagonia - ✈️🍺" <pasaporte@patagonia.com>';
         break;
       case 'voucher':
         subject = '¡Aquí tienes tu Voucher Patagonia! ✈️🍺';
         message = template.emailingTemplate(user, `${process.env.URL}/canjes`, 'Ver mis Vouchers', '¡Has generado un voucher', 'Para canjear tu premio acercate a uno de nuestros puntos de canje con el código de tu voucher.y cédula de identidad', `El código de tu voucher es: <strong>${extraInfo.voucher}</strong>`);
         email = user.email;
+        fromSender = '"Pasaporte Patagonia - ✈️🍺" <pasaporte@patagonia.com>';
         break;
       case 'contactar':
         subject = 'Consulta en la web de Patagonia';
@@ -38,9 +42,10 @@ module.exports = {
         Email: ${extraInfo.email}<br>
         Celular:${extraInfo.phone}`;
         email = [process.env.MAILTO];
+        email.push(extraInfo.email);
     }
     return transporter.sendMail({
-      from: '"Pasaporte Patagonia - ✈️🍺" <pasaporte@patagonia.com>',
+      from: fromSender,
       to: email,
       subject: subject, 
       html: message
