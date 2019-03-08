@@ -20,18 +20,21 @@ module.exports = {
         subject = '¡Confirma tu dirección de correo y empieza a sumar kilómetros! ✈️🍺';
         email = user.email;
         fromSender = '"Pasaporte Patagonia - ✈️🍺" <pasaporte@patagonia.com>';
+        emailUser = '';
         break;
       case 'recuperar':
         subject = '¡Recupera tu contraseña y sigue disfrutando del Pasaporte Patagonia! ✈️🍺';
         message = template.emailingTemplate(user, `${process.env.URL}/auth/recuperar/${user.activationCode}`, 'Recupera tu contraseña', '¡Si te olvidaste tu contraseña, no te preocupes, tenemos una solución!', '¡Hacé click en el botón y crea una nueva!');
         email = user.email;
         fromSender = '"Pasaporte Patagonia - ✈️🍺" <pasaporte@patagonia.com>';
+        emailUser = '';
         break;
       case 'voucher':
         subject = '¡Aquí tienes tu Voucher Patagonia! ✈️🍺';
         message = template.emailingTemplate(user, `${process.env.URL}/canjes`, 'Ver mis Vouchers', '¡Has generado un voucher', 'Para canjear tu premio acercate a uno de nuestros puntos de canje con el código de tu voucher.y cédula de identidad', `El código de tu voucher es: <strong>${extraInfo.voucher}</strong>`);
         email = user.email;
         fromSender = '"Pasaporte Patagonia - ✈️🍺" <pasaporte@patagonia.com>';
+        emailUser = '';
         break;
       case 'contactar':
         subject = 'Consulta en la web de Patagonia';
@@ -42,11 +45,13 @@ module.exports = {
         Email: ${extraInfo.email}<br>
         Celular:${extraInfo.phone}`;
         email = [process.env.MAILTO];
-        email.push(extraInfo.email);
+        emailUser = [process.env.MAILTO]
+        emailUser.push(extraInfo.email);
     }
     return transporter.sendMail({
       from: fromSender,
       to: email,
+      replyTo: emailUser,
       subject: subject, 
       html: message
     })
