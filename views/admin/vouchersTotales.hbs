@@ -28,6 +28,7 @@
       <th class="no-mobile">Kilómetros</th>
       <th>Premio</th>
       <th class="no-mobile">Fecha</th>
+      <th>Centro</th>
       </tr>
        {{#each vouchers}}
        <tr>
@@ -36,6 +37,7 @@
        <td class="no-mobile">{{this.prize.kms}}</td>
        <td>{{this.prize.name}}</td>
       <td class="no-mobile">{{dateFormat this.updated_at "DD/MM/YYYY, h:mm:ss a"}}</td>
+      <td>{{this.centro.dni}}</td>
       </tr>
       {{/each}}
       
