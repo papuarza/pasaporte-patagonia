@@ -342,10 +342,3 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
 }, false);
-
-
-/*
-<div class="navigation-wrapper">
-       <a href="/canjes-realizados">Canjes Realizados</a>
-     </div>
-*/
