@@ -143,7 +143,6 @@ for(let x = 0; x < 1000; x++) {
 
 mongoose.connect(dbName)
   .then(() => {
-    // mongoose.connection.db.dropCollection('codes')
     Code.create(codes)
     .then(codes => {
       console.log(`Se han creado ${codes.length} códigos`);

@@ -273,6 +273,16 @@ router.get('/vouchers-totales', ensureAdminRole, (req, res, next) => {
   .catch(error => next(error))
 });
 
+router.get('/vouchers-generados', ensureAdminRole, (req, res, next) => {
+  Voucher.find({status: 'Generado'})
+  .populate('user')
+  .populate('prize')
+  .then(vouchers => {
+    res.render('admin/voucherGeneradosTotal', {layout: false, vouchers});
+  })
+  .catch(error => next(error))
+});
+
 router.get('/premios-totales', ensureStoreRole, (req, res, next) => {
   res.render('admin/premiosTotales', {layout: false})
 });
