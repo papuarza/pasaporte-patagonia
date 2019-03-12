@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
       menuWrapper.classList.remove('slideInLeft');
       menuWrapper.classList.add('slideOutLeft');
     })
-  }
+  };
 
   let voucherCheck = document.getElementById("voucher-check");
   if(voucherCheck) {
