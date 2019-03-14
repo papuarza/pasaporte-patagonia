@@ -13,12 +13,16 @@ mongoose.connect(dbName)
     .then(users => {
       let sendEmails = [];
         users.forEach(user => {
-            sendEmails.push(emailing.sendTheEmail(user, 'newsletter', ''))
+          console.log(user.email)
+            // sendEmails.push(emailing.sendTheEmail(user, 'newsletter', ''))
         })
       Promise.all(sendEmails)
       .then(users => {
         console.log(`Enviado a ${users.length} usuarios!`)
         mongoose.connection.close();
+      })
+      .catch(errors => {
+        console.log(errors)
       })
     })
     .catch(error => {
