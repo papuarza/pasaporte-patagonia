@@ -208,7 +208,7 @@ module.exports = {
               <td align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;">
                 
       <div style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:20px;line-height:1;text-align:center;color:#000;">
-        <strong>${welcomeMessage} ${user.name}!</strong>
+        <strong>${user.name}, ${welcomeMessage}!</strong>
       </div>
     
               </td>
