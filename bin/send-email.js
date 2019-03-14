@@ -13,8 +13,7 @@ mongoose.connect(dbName)
     .then(users => {
       let sendEmails = [];
         users.forEach(user => {
-          console.log(user.email)
-            // sendEmails.push(emailing.sendTheEmail(user, 'newsletter', ''))
+            sendEmails.push(emailing.sendTheEmail(user, 'newsletter', ''))
         })
       Promise.all(sendEmails)
       .then(users => {
