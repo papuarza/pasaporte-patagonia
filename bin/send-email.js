@@ -9,7 +9,7 @@ mongoose.Promise = Promise;
 
 mongoose.connect(dbName)
   .then(() => {
-    User.find({role: 'User'})
+    User.find({email: 'YLENIAPERALTA@GMAIL.COM'})
     .then(users => {
       let sendEmails = [];
         users.forEach(user => {
