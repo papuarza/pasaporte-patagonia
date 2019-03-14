@@ -15,7 +15,6 @@ const MongoStore = require('connect-mongo')(session);
 const flash      = require("connect-flash");
 const ProgressBar = require('progressbar.js');
 const helpers = require('handlebars-helpers');
-    
 
 mongoose.Promise = Promise;
 mongoose
