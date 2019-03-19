@@ -271,17 +271,22 @@ document.addEventListener('DOMContentLoaded', () => {
       let email = document.getElementById('consultar-email').value;
       let phone = document.getElementById('consultar-phone').value;
       let consulta = document.getElementById('consultar-mensaje').value;
-      axios.post(`/enviar-consulta`, {email, phone, consulta})
-      .then(response => {
-        document.getElementById('consultar-email').value = '';
-        document.getElementById('consultar-phone').value = '';
-        document.getElementById('consultar-mensaje').value = '';
-        document.getElementById('consultar-return-message').innerHTML = 'El correo se ha enviado correctamente!';
+      if(email !== '' && phone !== '') {
+        axios.post(`/enviar-consulta`, {email, phone, consulta})
+        .then(response => {
+          document.getElementById('consultar-email').value = '';
+          document.getElementById('consultar-phone').value = '';
+          document.getElementById('consultar-mensaje').value = '';
+          document.getElementById('consultar-return-message').innerHTML = 'El correo se ha enviado correctamente!';
+          document.getElementById('consultar-return-message').style.color = '#fff';
+        })
+        .catch(error => {
+  
+        })
+      } else {
+        document.getElementById('consultar-return-message').innerHTML = 'Debes completar tus datos de contacto para enviar la consulta!';
         document.getElementById('consultar-return-message').style.color = '#fff';
-      })
-      .catch(error => {
-
-      })
+      }
     })
   }
 
