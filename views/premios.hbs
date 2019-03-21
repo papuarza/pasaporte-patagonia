@@ -16,8 +16,12 @@
     
     <div class="canje-item-wrapper">
       <div class="canje-item">
-        {{#if available}}<div class="image-item-container active" style="background-image: url('images/avion-c.jpg'); background-size: cover;"></div>{{/if}}
-        {{#unless available}}
+        {{#if user.finalPrize}}
+          <div class="image-item-container active" style="background-image: url('images/avion-c.jpg'); background-size: cover;">
+
+          </div>
+        {{/if}}
+        {{#unless user.finalPrize}}
         <div class="image-item-container" style="background-image: url('images/avion-c.jpg'); background-size: cover;"></div>
         <p>
           ¡Faltan
@@ -26,8 +30,8 @@
         </p>
         {{/unless}}
       </div>
-      {{#if available}}
-        <button class="btn voucher voucher-button" id="voucher-generate" data-value="{{this._id}}">CANJEAR</button>
+      {{#if user.finalPrize}}
+        <button class="btn voucher voucher-button" id="voucher-generate" data-value="5c9388d54bf0178cca021b6d">CANJEAR</button>
       {{/if}}
     </div>
     </div>
@@ -52,6 +56,7 @@
   <p class="cargar-codigo-paragraph premios mobile">PARA CANJEAR UN PREMIO SOLO TIENES QUE HACER CLICK EN EL BOTÓN <strong>CANJEAR</strong> Y AUTOMÁTICAMENTE SE GENERARÁ UN VOUCHER QUE LO RECIBIRÁS EN TU EMAIL.</p>
   <div class="canjes-wrapper premios mobile">
     {{#each prizes}}
+    {{#if this.regularPrize}}
     <div class="canje-item-wrapper">
       <div class="canje-item">
         {{#if available}}<div class="image-item-container active" style="background-image: url('{{this.image}}')"></div>{{/if}}
@@ -70,6 +75,7 @@
       <button class="btn voucher voucher-button-disabled" disabled data-value="{{this._id}}">CANJEAR</button>
       {{/if}}
     </div>
+    {{/if}}
     {{/each}}
   </div>
   <span style="color:#fff; font-size: 0.7rem">*Premios Exclusivos Sujetos a Stock</span>
