@@ -964,6 +964,31 @@ header #menu-mobile-wrapper {
 .faq-question-wrapper:last-child {
   border: 0; }
 
+.faq-image-wrapper {
+  width: 200px;
+  height: 200px;
+  border-radius: 360px;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-right: 50px;
+  margin-bottom: 50px; }
+
+.image-faq-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px; }
+
+.faq-image-wrapper img {
+  object-fit: cover;
+  object-position: center;
+  width: 100px;
+  height: auto; }
+
+.faq-image-wrapper img.bigger {
+  width: 130px; }
+
 /*******************************/
 /*                             */
 /*         PREMIOS             */
