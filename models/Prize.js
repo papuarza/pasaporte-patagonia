@@ -4,7 +4,8 @@ const Schema   = mongoose.Schema;
 const prizeSchema = new Schema({
   name: String,
   kms: Number,
-  image: String
+  image: String,
+  qty: Number,
 }, {
   timestamps: {
     createdAt: 'created_at',

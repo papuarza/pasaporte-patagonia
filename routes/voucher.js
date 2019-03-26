@@ -45,7 +45,14 @@ router.post('/create/:id', (req, res, next) => {
         .then(modifiedInfo => {
           emailing.sendTheEmail(user, 'voucher', voucher)
           .then(info => {
-            res.status(200).json({subMessage: "Felicidades!", message: "Tu voucher ha sido generado.", instructions: 'En tu mail recibirás el voucher y las instrucciones para canjear tu premio. Para más información sobre tus vouchers, ingresá a la sección CANJES.', redirection: 'VER CANJES', ref:'/canjes'})
+            if(prize.kms == 2640) {
+              Prize.updateOne({_id: prizeId}, {$inc: { qty: 1}})
+              .then(prizeResponse => {
+                res.status(200).json({subMessage: "Felicidades!", message: "Tu voucher ha sido generado.", instructions: 'En tu mail recibirás el voucher y las instrucciones para canjear tu premio. Para más información sobre tus vouchers, ingresá a la sección CANJES.', redirection: 'VER CANJES', ref:'/canjes'})
+              })
+            } else {
+              res.status(200).json({subMessage: "Felicidades!", message: "Tu voucher ha sido generado.", instructions: 'En tu mail recibirás el voucher y las instrucciones para canjear tu premio. Para más información sobre tus vouchers, ingresá a la sección CANJES.', redirection: 'VER CANJES', ref:'/canjes'})
+            }
           })
           .catch(error => next(error))
         })
