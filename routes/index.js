@@ -13,6 +13,13 @@ formatDate = (elem) => {
   return `${day}/${month+1}/${year}`
 }
 
+formatDateUpdate = (elem) => {
+  let day = elem['updated_at'].getDate();
+  let month = elem['updated_at'].getMonth();
+  let year = elem['updated_at'].getFullYear();
+  return `${day}/${month+1}/${year}`
+} 
+
 renderUserAndPrizes = (req, res, next, render) => {
   User.findById(req.session.passport.user, {_id:0, activationCode: 0})
   .then(user => {
@@ -164,7 +171,7 @@ router.get('/canjes', ensureAuthenticated, (req, res, next) => {
     Promise.all(voucherPromises)
     .then(vouchers => {
       let codes = user.codes.map(code => {
-        code['date'] = formatDate(code)
+        code['date'] = formatDateUpdate(code)
         return code;
       })
       res.render('canjes', {vouchers, codes});
