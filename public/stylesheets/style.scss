@@ -1432,9 +1432,17 @@ header #menu-mobile-wrapper {
   display: flex;
   flex-direction: column;
   color: #fff;
-  width: 25%;
+  width: 22%;
   justify-content: center;
   margin-bottom: 30px;
+}
+
+.info-wrapper-container:first-child {
+  width: 28%;
+}
+
+.info-wrapper-container:nth-child(2) {
+  width: 28%;
 }
 
 .info-wrapper-container p {
@@ -1888,7 +1896,7 @@ table.vouchers-table td {
   .detail-item-wrapper {
     min-width: 50%;
   }
-  
+
   header .menu-mobile img {
     width: 25px;
   }
