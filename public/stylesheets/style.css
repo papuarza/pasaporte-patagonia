@@ -1189,7 +1189,26 @@ header #menu-mobile-wrapper {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 100px; }
+  margin-bottom: 30px; }
+
+.detail-info-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  color: #fff;
+  margin-bottom: 50px; }
+
+.detail-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-width: 25%;
+  box-sizing: border-box;
+  margin-top: 15px; }
+
+.detail-item-wrapper p {
+  font: 75px "AmsiPro-Regular", sans-serif; }
+
+.detail-item-wrapper span {
+  font: 14px "AmsiPro-Light", sans-serif; }
 
 .info-wrapper-container {
   display: flex;

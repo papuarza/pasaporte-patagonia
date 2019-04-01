@@ -314,7 +314,21 @@ router.get('/info-promo', ensureAdminRole, (req, res, next) => {
       .then(vouchersGenerados => {
         Voucher.find({status: 'Utilizado'})
         .then(vouchersUtilizados => {
-          res.render('admin/infoPromo', {layout: false, codes, vouchersGenerados, vouchersUtilizados, users})
+          codesTotal = {
+            "4 Pack (Botella 355ml)": 0,
+            "4 Pack (Botella 730ml)": 0,
+            "6 Pack (Lata 24.7)": 0,
+            "6 Pack (Lata 473ml)": 0,
+            "Chopp ON": 0,
+            "Chopp Refugio": 0,
+            "Promo Botella 730ml ON": 0,
+            "Test": 0
+          }
+          codes.forEach((code) => {
+            codesTotal[code.type]++;
+          })
+          console.log(codesTotal)
+          res.render('admin/infoPromo', {layout: false, codes, vouchersGenerados, vouchersUtilizados, users, codesTotal})
         })
       })
     })

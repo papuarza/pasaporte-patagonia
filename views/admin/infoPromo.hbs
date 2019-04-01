@@ -40,6 +40,17 @@
         <span>VOUCHERS CANJEADOS</span>
       </div>
     </div>
+    <div class="step-counter-code vouchers-canjeados">
+       <span>INFO USO CÓDIGOS</span>
+    </div>
+    <div class="detail-info-wrapper">
+      {{#each codesTotal}}
+      <div class="detail-item-wrapper">
+        <p>{{this}}</p>
+        <span>{{@key}}</span>
+      </div>
+      {{/each}}
+    </div>
 <div class="logout-button">
     <a href="/logout">Cerrar Sesión</a>
   </div>
