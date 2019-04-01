@@ -172,7 +172,7 @@ router.get('/canjes', ensureAuthenticated, (req, res, next) => {
     .then(vouchers => {
       let codes = user.codes.map(code => {
         code['date'] = formatDateUpdate(code)
-        return code;
+        return code
       })
       res.render('canjes', {vouchers, codes});
     })
