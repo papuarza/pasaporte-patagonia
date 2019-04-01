@@ -308,7 +308,7 @@ router.get('/premios-totales', ensureStoreRole, (req, res, next) => {
 router.get('/info-promo', ensureAdminRole, (req, res, next) => {
   User.find({role: 'User'})
   .then(users => {
-    Code.find({status: 'Canjeado', test: false})
+    Code.find({status: 'Canjeado'})
     .then(codes => {
       Voucher.find({status: 'Generado'})
       .then(vouchersGenerados => {
