@@ -34,13 +34,12 @@ renderUserAndPrizes = (req, res, next, render) => {
         prize['available'] = prize['kmsLeft'] == 0 ? true : false;
         if(prize.kms == 2640) {
           prize['regularPrize'] = false;
-          console.log(prize.qty, process.env.BARILOCHE)
           if(prize.qty >= process.env.BARILOCHE) user['prizeAvailable'] = false;
           else user['prizeAvailable'] = true;
         } else prize['regularPrize'] = true;
         return prize;
       })
-      if(user['kmsToBariloche'] < 0) {
+      if(user['kmsToBariloche'] <= 0) {
         user['kmsToBariloche'] = 0;
         user['finalPrize'] = true;
       }
