@@ -34,7 +34,7 @@ router.post('/new', (req, res, next) => {
           return;
         } else {
           userTodayCode = user.codes.filter(codeElem => `${codeElem.updated_at.getDate()}/${codeElem.updated_at.getMonth()+1}/${codeElem.updated_at.getFullYear()}` == `${new Date().getDate()}/${new Date().getMonth()+1}/${new Date().getFullYear()}`);
-          if(userTodayCode.length > 5) {
+          if(userTodayCode.length >= 5) {
             res.status(200).json({message: 'Solo puedes cargar 5 códigos diarios, mañana puedes intentarlo otra vez!', subMessage: 'Lo sentimos!'})
           } else {
             let newCategory = userCategory(user.kmsTotal+code['kmsValue']);
