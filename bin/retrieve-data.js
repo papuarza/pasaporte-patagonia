@@ -9,7 +9,7 @@ mongoose.Promise = Promise;
 
 mongoose.connect(dbName)
   .then(() => {
-    User.findOne({email: 'User'})
+    User.findOne({email: 'me_schroder@hotmail.com'})
     .populate('codes')
     .then(users => {
       let sendEmails = [];
