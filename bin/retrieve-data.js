@@ -9,20 +9,13 @@ mongoose.Promise = Promise;
 
 mongoose.connect(dbName)
   .then(() => {
-    User.find({role: 'User'})
+    User.findOne({email: 'User'})
+    .populate('codes')
     .then(users => {
       let sendEmails = [];
-        users.forEach(user => {
-            sendEmails.push(emailing.sendTheEmail(user, 'newsletter', ''))
+        users.codes.forEach(code => {
+            console.log(code)
         })
-      Promise.all(sendEmails)
-      .then(users => {
-        console.log(`Enviado a ${users.length} usuarios!`)
-        mongoose.connection.close();
-      })
-      .catch(errors => {
-        console.log(errors)
-      })
     })
     .catch(error => {
       console.log(error)
