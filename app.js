@@ -97,3 +97,14 @@ const voucherRoutes = require('./routes/voucher');
 app.use('/voucher', voucherRoutes);
       
 module.exports = app;
+
+
+/*
+ {{#if user.finalPrize}}
+        {{#if user.prizeAvailable}}
+          <button class="btn voucher voucher-button" id="voucher-generate" data-value="5c9388d54bf0178cca021b6d">CANJEAR</button>
+          {{else}}
+          <p>Lo sentimos, ya tenemos 10 ganadores para el viaje a Bariloche. Pero puedes seguir canjeando tus puntos por otros premios!</p>
+        {{/if}}
+      {{/if}}
+*/
