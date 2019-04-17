@@ -345,5 +345,18 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     })
   }
+
+  const exportButton = document.getElementById('export-excel');
+  console.log(exportButton)
+  if(exportButton){
+    exportButton.addEventListener('click', () => {
+      excel = new ExcelGen({
+      "src_id": "table-teams",
+      "show_header": true,
+      "file_name": `vouchers-canjeados-${new Date()}.xlsx`
+    })
+    excel.generate();
+  })
+  }
   
 }, false);

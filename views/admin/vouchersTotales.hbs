@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script
+  src="https://code.jquery.com/jquery-1.8.2.min.js"
+  integrity="sha256-9VTS8JJyxvcUR+v+RTLTsd0ZWbzmafmlzMmeZO9RFyk="
+  crossorigin="anonymous"></script>
+      <script type="text/javascript" src="javascripts/external/jszip.js"></script>
+   <script type="text/javascript" src="javascripts/external/FileSaver.js"></script>
+   <script type="text/javascript" src="javascripts/scripts/excel-gen.js"></script>
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <title>Cerveza Patagonia Paraguay</title>
 </head>
@@ -21,9 +28,11 @@
    <div class="step-counter-code vouchers-canjeados">
        <span>TOTAL VOUCHERS CANJEADOS: {{vouchers.length}}</span>
     </div>
-    <table class="vouchers-table">
+    <div class="export-container"><span id="export-excel">Exportar a Excel</span></div>
+    <table class="vouchers-table" id="table-teams">
       <tr>
       <th>No.</th>
+      <th>DNI</th>
       <th>Usuario</th>
       <th class="no-mobile">Kilómetros</th>
       <th>Premio</th>
@@ -33,6 +42,7 @@
        {{#each vouchers}}
        <tr>
         <td>{{@index}}</td>
+        <td>{{this.user.dni}}</td>
        <td>{{this.user.name}} {{this.user.lastName}}</td>
        <td class="no-mobile">{{this.prize.kms}}</td>
        <td>{{this.prize.name}}</td>
@@ -46,6 +56,7 @@
     <a href="/logout">Cerrar Sesión</a>
   </div>
 </div>
-  <script src='/javascripts/script.js'></script>
+  <script src='/javascripts/script.js'>
+  </script>
 </body>
 </html>

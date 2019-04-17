@@ -1202,7 +1202,7 @@ header #menu-mobile-wrapper {
   flex-direction: column;
   min-width: 25%;
   box-sizing: border-box;
-  margin-top: 15px; }
+  margin-bottom: 15px; }
 
 .detail-item-wrapper p {
   font: 75px "AmsiPro-Regular", sans-serif; }
@@ -1214,9 +1214,15 @@ header #menu-mobile-wrapper {
   display: flex;
   flex-direction: column;
   color: #fff;
-  width: 25%;
+  width: 22%;
   justify-content: center;
   margin-bottom: 30px; }
+
+.info-wrapper-container:first-child {
+  width: 25%; }
+
+.info-wrapper-container:nth-child(2) {
+  width: 28%; }
 
 .info-wrapper-container p {
   font-size: 85px;
@@ -1456,7 +1462,8 @@ header #menu-mobile-wrapper {
 .navigation-wrapper {
   display: flex;
   justify-content: center;
-  padding: 30px 0; }
+  padding: 30px 0;
+  align-items: center; }
 
 .vouchers-canjeados span {
   width: 60%; }
@@ -1510,6 +1517,17 @@ table.vouchers-table td {
   font-weight: bold;
   font-family: "AmsiPro-Bold", sans-serif;
   font-size: 10px; }
+
+#export-excel {
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer; }
+
+.export-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px; }
 
 /*******************************/
 /*                             */
@@ -1585,6 +1603,8 @@ table.vouchers-table td {
   header .menu-mobile {
     display: inline;
     position: relative; }
+  .detail-item-wrapper {
+    min-width: 50%; }
   header .menu-mobile img {
     width: 25px; }
   header #menu-mobile-wrapper img {
@@ -1628,7 +1648,7 @@ table.vouchers-table td {
   table .user-cell {
     min-width: 100px; }
   .info-wrapper-container {
-    width: 100%; }
+    width: 100% !important; }
   .tutorial-image-wrapper {
     background-image: url("../images/tutorial-mobile.jpg");
     top: 8vh; }

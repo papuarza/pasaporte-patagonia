@@ -134,7 +134,7 @@ mongoose.Promise = Promise;
 
 codes.push({
   code_id: crypto.randomBytes(5).toString('HEX'),
-  kmsValue: 5,
+  kmsValue: 10,
   type: 'Programatic',
   status: 'Pendiente',
   test: false
