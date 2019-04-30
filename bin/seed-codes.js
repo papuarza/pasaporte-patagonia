@@ -33,16 +33,16 @@ mongoose.Promise = Promise;
 // }
 
 //6 Pack (Lata 473ml)
-// for(let x = 0; x < 3000; x++) {
-//   let id = 
-//   codes.push({
-//     code_id: crypto.randomBytes(5).toString('HEX'),
-//     kmsValue: 35,
-//     type: '6 Pack (Lata 473ml)',
-//     status: 'Pendiente',
-//     test: false
-//   })
-// }
+for(let x = 0; x < 1500; x++) {
+  let id = 
+  codes.push({
+    code_id: crypto.randomBytes(5).toString('HEX'),
+    kmsValue: 35,
+    type: '6 Pack (Lata 473ml)',
+    status: 'Pendiente',
+    test: false
+  })
+}
 
 // //6 Pack (Lata 24.7)
 // for(let x = 0; x < 3000; x++) {
@@ -68,17 +68,17 @@ mongoose.Promise = Promise;
 //   })
 // }
 
-// //4 Pack (Botella 730ml)
-// for(let x = 0; x < 3000; x++) {
-//   let id = 
-//   codes.push({
-//     code_id: crypto.randomBytes(5).toString('HEX'),
-//     kmsValue: 30,
-//     type: '4 Pack (Botella 730ml)',
-//     status: 'Pendiente',
-//     test: false
-//   })
-// }
+//4 Pack (Botella 730ml)
+for(let x = 0; x < 1500; x++) {
+  let id = 
+  codes.push({
+    code_id: crypto.randomBytes(5).toString('HEX'),
+    kmsValue: 30,
+    type: '4 Pack (Botella 730ml)',
+    status: 'Pendiente',
+    test: false
+  })
+}
 
 // //Promo Botella 730ml ON
 // for(let x = 0; x < 1000; x++) {
@@ -132,13 +132,13 @@ mongoose.Promise = Promise;
 //   test: false
 // })
 
-codes.push({
-  code_id: crypto.randomBytes(5).toString('HEX'),
-  kmsValue: 10,
-  type: 'Programatic',
-  status: 'Pendiente',
-  test: false
-})
+// codes.push({
+//   code_id: crypto.randomBytes(5).toString('HEX'),
+//   kmsValue: 10,
+//   type: 'Programatic',
+//   status: 'Pendiente',
+//   test: false
+// })
 
 
 mongoose.connect(dbName)
